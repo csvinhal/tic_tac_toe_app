@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'app_text_theme.dart';
 
-abstract class Styles {
+class AppTheme {
   static Color white = const Color(0xFFFFFFFF);
 
   static Color lighterGrey = const Color(0xFFF1F1F1);
@@ -37,9 +38,17 @@ abstract class Styles {
 
   static Color darkDark = const Color(0xFF0C1017);
 
-  static ThemeData themeData(bool isDarkTheme, BuildContext context) {
-    return ThemeData(
-        // TODO
-        );
-  }
+  static final ThemeData lightTheme = ThemeData(
+      backgroundColor: AppTheme.white,
+      disabledColor: AppTheme.lighterGrey,
+      primaryColor: AppTheme.blue,
+      textTheme: AppTextTheme.textTheme
+      // TODO
+      );
+
+  static final ThemeData darkTheme = ThemeData(
+    backgroundColor: AppTheme.white,
+    disabledColor: AppTheme.lighterGrey,
+    primaryColor: AppTheme.blue,
+  );
 }

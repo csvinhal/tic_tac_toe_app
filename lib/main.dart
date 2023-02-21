@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../notifiers/dark_theme_provider.dart';
 import 'utils/app_theme.dart';
+import 'widgets/text_typography/text_typography.dart';
 
 void main() {
   runApp(
@@ -68,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              TextTypography('∏'),
               Text(
                 "Header",
                 style: Theme.of(context).textTheme.headline1,

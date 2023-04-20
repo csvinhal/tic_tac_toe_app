@@ -1,12 +1,25 @@
+import 'dart:io';
+
+import 'package:design/design.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:tic_tac_toe_app/widgets/step_footer/step_footer.dart';
 
 import '../notifiers/dark_theme_provider.dart';
-import 'utils/app_theme.dart';
-import 'widgets/text_typography/text_typography.dart';
+
+class _HttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          ((X509Certificate cert, String host, int port) {
+        return true;
+      });
+  }
+}
 
 void main() {
+  HttpOverrides.global = _HttpOverrides();
   runApp(
     ChangeNotifierProvider(
       create: (_) => DarkThemeProvider(),
@@ -20,23 +33,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(390, 844),
-      builder: (context, child) => MaterialApp(
+    bool isDarkMode = context.watch<DarkThemeProvider>().darkTheme;
+    return ThemeBuilder(builder: (context, theme, darkTheme) {
+      return MaterialApp(
         title: 'Tic Tac Toe',
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        themeMode: context.watch<DarkThemeProvider>().darkTheme
-            ? ThemeMode.dark
-            : ThemeMode.light,
-        home: const MyHomePage(title: 'Tic Tac Toe'),
-      ),
-    );
+        theme: theme,
+        darkTheme: darkTheme,
+        themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
+        home: MyHomePage(
+          isDarkMode: isDarkMode,
+          title: 'Tic Tac Toe',
+        ),
+      );
+    });
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  final bool isDarkMode;
+
+  const MyHomePage({
+    required this.isDarkMode,
+    required this.title,
+    super.key,
+  });
 
   final String title;
 
@@ -58,27 +78,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     bool currentTheme = context.watch<DarkThemeProvider>().darkTheme;
+    final NeutralColors myColors =
+        Theme.of(context).extension<NeutralColors>()!;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        width: double.infinity,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              TextTypography('∏'),
-              Text(
-                "Header",
-                style: Theme.of(context).textTheme.headline1,
-              ),
-              SizedBox(
-                height: 40.0.w,
-              )
-            ],
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            StepFooter(
+              isDarkMode: isDarkMode,
+              initStep: 0,
+              onPrevious: () {},
+              onNext: () {},
+            )
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -89,4 +106,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  bool get isDarkMode => widget.isDarkMode;
 }

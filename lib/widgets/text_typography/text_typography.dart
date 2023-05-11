@@ -1,6 +1,6 @@
-import 'package:design/design.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/modules/theme/domain/entities/entities.dart';
 import 'text_typography_style_type.dart';
 import 'text_typography_type.dart';
 
@@ -78,6 +78,7 @@ class TextTypography extends StatelessWidget {
       style: textStyle?.copyWith(
         color: color ?? textColor,
       ),
+      textAlign: TextAlign.center,
     );
   }
 }

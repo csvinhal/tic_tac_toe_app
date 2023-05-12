@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/modules/onboarding/presenter/presentar.dart';
+import '../../../../core/modules/onboard/presenter/presentar.dart';
 import '../../../../core/modules/theme/presenter/cubits/theme_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
-  final OnboardingCubit onboardingCubit;
+  final OnboardCubit onboardingCubit;
   final ThemeCubit themeCubit;
 
   const SplashScreen({
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<OnboardingCubit, OnboardingState>(
+    return BlocListener<OnboardCubit, OnboardState>(
       bloc: _onboardingCubit,
       listenWhen: (previous, current) => current is! OnboardLoadingState,
       listener: (context, state) {
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  OnboardingCubit get _onboardingCubit => widget.onboardingCubit;
+  OnboardCubit get _onboardingCubit => widget.onboardingCubit;
 
   ThemeCubit get _themeCubit => widget.themeCubit;
 }

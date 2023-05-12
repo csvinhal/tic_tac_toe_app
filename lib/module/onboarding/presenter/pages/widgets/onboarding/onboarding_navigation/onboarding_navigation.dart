@@ -5,13 +5,13 @@ import 'onboarding_navigation_indicator_row/onboarding_navigation_indicator_row.
 
 class OnboardingNavigation extends StatefulWidget {
   final bool isDarkMode;
-  final int initStep;
-  final void Function(int index) onPrevious;
-  final void Function(int index) onNext;
+  final int currentStep;
+  final VoidCallback onPrevious;
+  final VoidCallback onNext;
 
   const OnboardingNavigation({
     required this.isDarkMode,
-    required this.initStep,
+    required this.currentStep,
     required this.onPrevious,
     required this.onNext,
     super.key,
@@ -22,12 +22,9 @@ class OnboardingNavigation extends StatefulWidget {
 }
 
 class _OnboardingNavigationState extends State<OnboardingNavigation> {
-  late int currentStep;
-  int opacityLevel = 1;
 
   @override
   void initState() {
-    currentStep = initStep;
     super.initState();
   }
 
@@ -37,53 +34,39 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AnimatedOpacity(
-          opacity: currentStep > 0 ? 1 : 0,
+          opacity: _currentStep > 0 ? 1 : 0,
           duration: const Duration(milliseconds: 150),
           child: TextButton(
-            onPressed: currentStep == 0
-                ? null
-                : () {
-                    setState(() {
-                      currentStep -= 1;
-                    });
-                    onPrevious(currentStep);
-                  },
+            onPressed: _currentStep == 0 ? null : _onPrevious,
             child: TextTypography.secondary(
               'Back',
-              isDarkMode: isDarkMode,
+              isDarkMode: _isDarkMode,
             ),
           ),
         ),
         Flexible(
           fit: FlexFit.tight,
           child: OnboardingNavigationIndicatorRow(
-            isDarkMode: isDarkMode,
-            index: currentStep,
+            isDarkMode: _isDarkMode,
+            index: _currentStep,
           ),
         ),
         TextButton(
-          onPressed: currentStep == 2
-              ? null
-              : () {
-                  setState(() {
-                    currentStep += 1;
-                  });
-                  onNext(currentStep);
-                },
+          onPressed: _onNext,
           child: TextTypography(
             'Next',
-            isDarkMode: isDarkMode,
+            isDarkMode: _isDarkMode,
           ),
         ),
       ],
     );
   }
 
-  bool get isDarkMode => widget.isDarkMode;
+  bool get _isDarkMode => widget.isDarkMode;
 
-  int get initStep => widget.initStep;
+  int get _currentStep => widget.currentStep;
 
-  void Function(int index) get onPrevious => widget.onPrevious;
+  VoidCallback get _onPrevious => widget.onPrevious;
 
-  void Function(int index) get onNext => widget.onNext;
+  VoidCallback get _onNext => widget.onNext;
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../core/modules/onboarding/presenter/cubits/onboarding_cubit.dart';
+import '../core/modules/onboard/presenter/cubits/onboard_cubit.dart';
 import '../core/modules/theme/presenter/cubits/theme_cubit.dart';
 import '../core/modules/theme/presenter/theme_builder.dart';
 
@@ -12,7 +12,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeCubit = Modular.get<ThemeCubit>();
-    final onboardingCubit = Modular.get<OnboardingCubit>();
+    final onboardingCubit = Modular.get<OnboardCubit>();
 
     debugPrint(onboardingCubit.toString());
 

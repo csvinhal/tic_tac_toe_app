@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/entity/onboarding_data.dart';
+import '../cubit/onboarding_cubit.dart';
 import 'widgets/onboarding/onboarding.dart';
 import 'widgets/onboarding/onboarding_navigation/onboarding_navigation.dart';
 
 class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key});
+  final OnboardingCubit onboardingCubit;
+
+  const OnboardingPage({
+    required this.onboardingCubit,
+    super.key,
+  });
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
@@ -17,7 +23,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController();
+    _pageController = PageController(initialPage: _onboardingCubit.state);
   }
 
   @override
@@ -31,49 +37,48 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return SafeArea(
       child: Scaffold(
         body: PageView.builder(
-          itemCount: _onboarding.length,
+          itemCount: _onboardingCubit.onboarding.length,
           controller: _pageController,
           pageSnapping: false,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (_, index) => Onboarding(
-            path: _onboarding[index].path,
-            title: _onboarding[index].title,
-            description: _onboarding[index].description,
+            path: _onboardingCubit.onboarding[index].path,
+            title: _onboardingCubit.onboarding[index].title,
+            description: _onboardingCubit.onboarding[index].description,
             isDarkMode: false,
           ),
         ),
-        bottomNavigationBar: OnboardingNavigation(
-          isDarkMode: false,
-          initStep: 0,
-          onNext: (index) => _pageController.nextPage(
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeIn,
-          ),
-          onPrevious: (index) => _pageController.previousPage(
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeIn,
-          ),
+        bottomNavigationBar: BlocBuilder<OnboardingCubit, int>(
+          bloc: _onboardingCubit,
+          buildWhen: (previous, current) => previous != current,
+          builder: (context, state) {
+            return OnboardingNavigation(
+              isDarkMode: false,
+              currentStep: _onboardingCubit.state,
+              onPrevious: () {
+                _onboardingCubit.onPageDecrement();
+                _pageController.previousPage(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeIn,
+                );
+              },
+              onNext: () {
+                if (_pageController.page == 2) {
+                  Navigator.of(context).pushReplacementNamed('/login');
+                  return;
+                }
+                _onboardingCubit.onPageIncrement();
+                _pageController.nextPage(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeIn,
+                );
+              },
+            );
+          },
         ),
       ),
     );
   }
 
-  List<OnboardingData> get _onboarding => const [
-        OnboardingData(
-          path: 'assets/images/idea.png',
-          title: 'Welcome',
-          description: 'Most fun game now available on your smartphone device!',
-        ),
-        OnboardingData(
-          path: 'assets/images/swords.png',
-          title: 'Complete',
-          description: 'Play online with your friends and top the leaderboard!',
-        ),
-        OnboardingData(
-          path: 'assets/images/winner.png',
-          title: 'Scoreboard',
-          description:
-              'Earn points for each game and make your way to top the scoreboard!',
-        )
-      ];
+  OnboardingCubit get _onboardingCubit => widget.onboardingCubit;
 }

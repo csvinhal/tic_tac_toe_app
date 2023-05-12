@@ -22,10 +22,12 @@ class ThemeBuilder extends StatelessWidget {
       designSize: const Size(390, 844),
       builder: (context, child) {
         final theme = ThemeData.light().copyWith(
+          scaffoldBackgroundColor: const Color(0xFFFFFFFF),
           textTheme: AppTextTheme.textTheme,
           extensions: ThemeExtensions.lightExtensions,
         );
         final darTheme = ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: const Color(0xFF0C1017),
           textTheme: AppTextTheme.textTheme,
           extensions: ThemeExtensions.darkExtensions,
         );

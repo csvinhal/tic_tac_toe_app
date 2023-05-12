@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../domain/usecases/usecases.dart';
-import 'onboarding_state.dart';
+import 'onboard_state.dart';
 
-class OnboardingCubit extends Cubit<OnboardingState> {
-  GetOnboardingViewedUseCase getOnboardingViewedUseCase;
+class OnboardCubit extends Cubit<OnboardState> {
+  GetOnboardViewedUseCase getOnboardViewedUseCase;
 
-  OnboardingCubit({required this.getOnboardingViewedUseCase})
+  OnboardCubit({required this.getOnboardViewedUseCase})
       : super(const OnboardUnviewedState());
 
   void getOnboardingViewed() async {
     emit(const OnboardLoadingState());
 
-    var result = await getOnboardingViewedUseCase();
+    var result = await getOnboardViewedUseCase();
 
     result.fold((error) {
       debugPrint(error.toString());

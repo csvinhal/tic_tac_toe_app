@@ -1,0 +1,17 @@
+import '../../../../shared/services/local_storage_service.dart';
+
+abstract class OnboardDatasource {
+  Future<dynamic> getIsOnboardViewed();
+}
+
+class OnboardDatasourceImpl implements OnboardDatasource {
+  final LocalStorageService _localStorageService;
+  final onboardingViewed = 'is_onboard_viewed';
+
+  const OnboardDatasourceImpl(this._localStorageService);
+
+  @override
+  Future<dynamic> getIsOnboardViewed() async {
+    return _localStorageService.get(onboardingViewed);
+  }
+}

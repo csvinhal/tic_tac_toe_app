@@ -1,27 +1,28 @@
 import 'package:dartz/dartz.dart';
-
-import '../../domain/repositories/onboard_repository.dart';
-import '../datasource/onboard_datasource.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/data/datasource/onboard_datasource.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/domain/repositories/onboard_repository.dart';
 
 class OnboardRepositoryImpl implements OnboardRepository {
-  final OnboardDatasource _onboardDatasource;
-
   const OnboardRepositoryImpl(this._onboardDatasource);
+
+  final OnboardDatasource _onboardDatasource;
 
   @override
   Future<Either<Exception, bool>> getIsOnboardViewed() async {
     try {
       final isOnboardViewed = await _onboardDatasource.getIsOnboardViewed();
-      return Right(isOnboardViewed ?? false);
+      return Right(isOnboardViewed);
     } on Exception catch (e) {
       return Left(e);
     }
   }
 
   @override
-  Future<Either<Exception, void>> putIsOnboardViewed(bool isViewed) async {
+  Future<Either<Exception, void>> putIsOnboardViewed({
+    required bool isViewed,
+  }) async {
     try {
-      await _onboardDatasource.putIsOnboardViewed(isViewed);
+      await _onboardDatasource.putIsOnboardViewed(isViewed: isViewed);
       return const Right(null);
     } on Exception catch (e) {
       return Left(e);

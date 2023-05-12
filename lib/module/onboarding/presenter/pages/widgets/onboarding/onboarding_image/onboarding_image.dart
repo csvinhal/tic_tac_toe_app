@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnboardingImage extends StatelessWidget {
-  final String path;
-
   const OnboardingImage({
     required this.path,
     super.key,
   });
+
+  final String path;
 
   @override
   Widget build(BuildContext context) {

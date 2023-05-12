@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'onboarding_navigation_indicator/onboarding_navigation_indicator.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_navigation/onboarding_navigation_indicator_row/onboarding_navigation_indicator/onboarding_navigation_indicator.dart';
 
 class OnboardingNavigationIndicatorRow extends StatelessWidget {
-  final bool isDarkMode;
-  final int index;
-
   const OnboardingNavigationIndicatorRow({
     required this.isDarkMode,
     required this.index,
     super.key,
   });
+
+  final bool isDarkMode;
+  final int index;
 
   @override
   Widget build(BuildContext context) {

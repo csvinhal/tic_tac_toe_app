@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'app_text_theme.dart';
-import 'theme_extensions.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/presenter/app_text_theme.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/presenter/theme_extensions.dart';
 
 class ThemeBuilder extends StatelessWidget {
+  const ThemeBuilder({
+    required this.builder,
+    super.key,
+  });
+
   final Widget Function(
     BuildContext context,
     ThemeData theme,
     ThemeData darkTheme,
   ) builder;
-
-  const ThemeBuilder({
-    required this.builder,
-    super.key,
-  });
 
   @override
   Widget build(BuildContext context) {

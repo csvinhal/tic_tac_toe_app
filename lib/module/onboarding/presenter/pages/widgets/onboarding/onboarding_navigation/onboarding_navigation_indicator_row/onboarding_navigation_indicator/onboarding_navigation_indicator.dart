@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../../../../../core/modules/theme/domain/entities/entities.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/entities.dart';
 
 class OnboardingNavigationIndicator extends StatelessWidget {
-  final bool isDarkMode;
-  final bool active;
-
   const OnboardingNavigationIndicator({
     required this.isDarkMode,
     required this.active,
     super.key,
   });
+  final bool isDarkMode;
+  final bool active;
 
   @override
   Widget build(BuildContext context) {
-    final NeutralColors? neutralColors =
-        Theme.of(context).extension<NeutralColors>();
-    final StyleColors? styleColors = Theme.of(context).extension<StyleColors>();
+    final neutralColors = Theme.of(context).extension<NeutralColors>();
+    final styleColors = Theme.of(context).extension<StyleColors>();
 
-    Color? activeColor = styleColors?.blue;
-    Color? defaultColor =
+    final activeColor = styleColors?.blue;
+    final defaultColor =
         isDarkMode ? neutralColors?.lightGrey : neutralColors?.grey;
 
     return Container(

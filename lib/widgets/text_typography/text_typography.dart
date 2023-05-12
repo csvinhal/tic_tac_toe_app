@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-
-import '../../core/modules/theme/domain/entities/entities.dart';
-import 'text_typography_style_type.dart';
-import 'text_typography_type.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/text_colors.dart';
+import 'package:tic_tac_toe_app/widgets/text_typography/text_typography_style_type.dart';
+import 'package:tic_tac_toe_app/widgets/text_typography/text_typography_type.dart';
 
 class TextTypography extends StatelessWidget {
-  final bool isDarkMode;
-  final String text;
-  final TextTypographyType type;
-  final TextTypographyStyleType styleType;
-  final Color? color;
-
   const TextTypography(
     this.text, {
     required this.isDarkMode,
@@ -19,7 +12,6 @@ class TextTypography extends StatelessWidget {
     this.color,
     super.key,
   });
-
   const TextTypography.secondary(
     this.text, {
     required this.isDarkMode,
@@ -28,9 +20,15 @@ class TextTypography extends StatelessWidget {
     super.key,
   }) : styleType = TextTypographyStyleType.secondary;
 
+  final bool isDarkMode;
+  final String text;
+  final TextTypographyType type;
+  final TextTypographyStyleType styleType;
+  final Color? color;
+
   @override
   Widget build(BuildContext context) {
-    final TextColors? textColors = Theme.of(context).extension<TextColors>();
+    final textColors = Theme.of(context).extension<TextColors>();
     TextStyle? textStyle;
 
     switch (type) {
@@ -61,8 +59,6 @@ class TextTypography extends StatelessWidget {
       case TextTypographyType.body2:
         textStyle = Theme.of(context).textTheme.bodySmall;
         break;
-      default:
-        textStyle = Theme.of(context).textTheme.bodyLarge;
     }
 
     Color? textColor;

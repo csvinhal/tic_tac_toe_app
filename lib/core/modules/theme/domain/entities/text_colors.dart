@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class TextColors extends ThemeExtension<TextColors> {
-  final Color? primary;
-  final Color? secondary;
-
   const TextColors({
     required this.primary,
     required this.secondary,
   });
+
+  final Color? primary;
+  final Color? secondary;
 
   @override
   ThemeExtension<TextColors> copyWith({

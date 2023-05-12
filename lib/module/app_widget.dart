@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import '../core/modules/onboard/presenter/cubits/onboard_cubit.dart';
-import '../core/modules/theme/presenter/cubits/theme_cubit.dart';
-import '../core/modules/theme/presenter/theme_builder.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubits/onboard_cubit.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/presenter/theme_builder.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});

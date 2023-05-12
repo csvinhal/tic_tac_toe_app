@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../../../widgets/text_typography/text_typography.dart';
-import '../../../../../../../widgets/text_typography/text_typography_type.dart';
+import 'package:tic_tac_toe_app/widgets/text_typography/text_typography.dart';
+import 'package:tic_tac_toe_app/widgets/text_typography/text_typography_type.dart';
 
 class OnboardingContent extends StatelessWidget {
-  final String title;
-  final String description;
-  final bool isDarkMode;
-
   const OnboardingContent({
     required this.title,
     required this.description,
     required this.isDarkMode,
     super.key,
   });
+  final String title;
+  final String description;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {

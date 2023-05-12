@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../core/modules/onboard/presenter/cubits/cubits.dart';
-import '../cubit/onboarding_cubit.dart';
-import 'widgets/onboarding/onboarding.dart';
-import 'widgets/onboarding/onboarding_navigation/onboarding_navigation.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubits/onboard_cubit.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/cubit/onboarding_cubit.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_navigation/onboarding_navigation.dart';
 
 class OnboardingPage extends StatefulWidget {
-  final OnboardingCubit onboardingCubit;
-  final OnboardCubit onboardCubit;
-
   const OnboardingPage({
     required this.onboardingCubit,
     required this.onboardCubit,
     super.key,
   });
+
+  final OnboardingCubit onboardingCubit;
+  final OnboardCubit onboardCubit;
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();

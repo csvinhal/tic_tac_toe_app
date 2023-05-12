@@ -1,35 +1,39 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class LocalStorageService {
-  Future<void> delete(String key);
-  Future<dynamic> get(String key);
-  Future<void> put(String key, dynamic value);
+  Future<bool> delete(String key);
+  Future<Object?> get(String key);
+  Future<bool> put(String key, Object value);
 }
 
 class LocalStorageServiceImpl implements LocalStorageService {
   @override
-  Future delete(String key) async {
-    var shared = await SharedPreferences.getInstance();
-    shared.remove(key);
+  Future<bool> delete(String key) async {
+    final shared = await SharedPreferences.getInstance();
+    return shared.remove(key);
   }
 
   @override
-  Future get(String key) async {
-    var shared = await SharedPreferences.getInstance();
+  Future<Object?> get(String key) async {
+    final shared = await SharedPreferences.getInstance();
     return shared.get(key);
   }
 
   @override
-  Future put(String key, dynamic value) async {
-    var shared = await SharedPreferences.getInstance();
+  Future<bool> put(String key, Object value) async {
+    final shared = await SharedPreferences.getInstance();
     if (value is bool) {
-      shared.setBool(key, value);
+      return shared.setBool(key, value);
     } else if (value is String) {
-      shared.setString(key, value);
+      return shared.setString(key, value);
     } else if (value is int) {
-      shared.setInt(key, value);
+      return shared.setInt(key, value);
     } else if (value is double) {
-      shared.setDouble(key, value);
+      return shared.setDouble(key, value);
     }
+
+    throw Exception(
+      'Invalid type value. Value must be a bool, String, int or double',
+    );
   }
 }

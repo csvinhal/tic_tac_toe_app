@@ -1,10 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
-
-import '../../shared/services/local_storage_service.dart';
-import 'data/datasource/onboard_datasource.dart';
-import 'data/repositories/onboard_repository_impl.dart';
-import 'domain/usecases/usecases.dart';
-import 'presenter/presentar.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/data/datasource/onboard_datasource.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/data/repositories/onboard_repository_impl.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/domain/usecases/get_onboard_viewed_usecase.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/domain/usecases/update_onboard_viewed_usecase.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubits/onboard_cubit.dart';
+import 'package:tic_tac_toe_app/core/shared/services/local_storage_service.dart';
 
 class OnboardModule extends Module {
   @override

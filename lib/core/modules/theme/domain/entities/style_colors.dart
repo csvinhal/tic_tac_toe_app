@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 
 class StyleColors extends ThemeExtension<StyleColors> {
-  final Color? blue;
-  final Color? green;
-  final Color? red;
-  final Color? yellow;
-  final Color? darkBlue;
-  final Color? darkerBlue;
-  final Color? dark;
-
   const StyleColors({
     required this.blue,
     required this.green,
@@ -18,6 +10,14 @@ class StyleColors extends ThemeExtension<StyleColors> {
     this.darkerBlue,
     this.dark,
   });
+
+  final Color? blue;
+  final Color? green;
+  final Color? red;
+  final Color? yellow;
+  final Color? darkBlue;
+  final Color? darkerBlue;
+  final Color? dark;
 
   @override
   ThemeExtension<StyleColors> copyWith({

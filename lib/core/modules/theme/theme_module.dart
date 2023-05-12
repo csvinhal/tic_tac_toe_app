@@ -1,6 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'presenter/cubits/theme_cubit.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
 
 class ThemeModule extends Module {
   @override

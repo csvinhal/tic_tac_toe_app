@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../domain/entity/onboarding_data.dart';
+import 'package:tic_tac_toe_app/module/onboarding/domain/entity/onboarding_data.dart';
 
 class OnboardingCubit extends Cubit<int> {
   OnboardingCubit() : super(0);
@@ -28,6 +27,7 @@ class OnboardingCubit extends Cubit<int> {
           path: 'assets/images/winner.png',
           title: 'Scoreboard',
           description:
+              // ignore: lines_longer_than_80_chars
               'Earn points for each game and make your way to top the scoreboard!',
         )
       ];

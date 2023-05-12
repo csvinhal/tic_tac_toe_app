@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
 
 class NeutralColors extends ThemeExtension<NeutralColors> {
-  final Color? white;
-  final Color? lighterGrey;
-  final Color? lightGrey;
-  final Color? grey;
-  final Color? darkGrey;
-  final Color? darkerGrey;
-  final Color? darkestGrey;
-  final Color? black;
-
   const NeutralColors({
     required this.white,
     required this.lighterGrey,
@@ -20,6 +11,15 @@ class NeutralColors extends ThemeExtension<NeutralColors> {
     required this.darkestGrey,
     required this.black,
   });
+
+  final Color? white;
+  final Color? lighterGrey;
+  final Color? lightGrey;
+  final Color? grey;
+  final Color? darkGrey;
+  final Color? darkerGrey;
+  final Color? darkestGrey;
+  final Color? black;
 
   @override
   ThemeExtension<NeutralColors> copyWith({

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../domain/entities/entities.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/entities.dart';
 
 class ThemeExtensions {
   static Iterable<ThemeExtension<dynamic>> lightExtensions = [

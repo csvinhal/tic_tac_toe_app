@@ -11,63 +11,63 @@ class GameBoard extends StatelessWidget {
       crossAxisSpacing: 15.w,
       crossAxisCount: 3,
       children: [
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,
             width: 104.w,
           ),
         ),
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,
             width: 104.w,
           ),
         ),
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,
             width: 104.w,
           ),
         ),
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,
             width: 104.w,
           ),
         ),
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,
             width: 104.w,
           ),
         ),
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,
             width: 104.w,
           ),
         ),
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,
             width: 104.w,
           ),
         ),
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,
             width: 104.w,
           ),
         ),
-        Container(
+        ColoredBox(
           color: Theme.of(context).disabledColor,
           child: SizedBox(
             height: 104.h,

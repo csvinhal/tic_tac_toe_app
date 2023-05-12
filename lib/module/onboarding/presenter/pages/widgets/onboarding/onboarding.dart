@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'onboarding_content/onboarding_content.dart';
-import 'onboarding_image/onboarding_image.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_content/onboarding_content.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_image/onboarding_image.dart';
 
 class Onboarding extends StatelessWidget {
-  final String path;
-  final String title;
-  final String description;
-  final bool isDarkMode;
-
   const Onboarding({
     required this.path,
     required this.title,
@@ -16,6 +10,11 @@ class Onboarding extends StatelessWidget {
     required this.isDarkMode,
     super.key,
   });
+
+  final String path;
+  final String title;
+  final String description;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {

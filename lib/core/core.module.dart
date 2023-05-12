@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'modules/onboard/onboard_module.dart';
-import 'modules/theme/theme_module.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/onboard.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/theme_module.dart';
 
 class CoreModule extends Module {
   @override

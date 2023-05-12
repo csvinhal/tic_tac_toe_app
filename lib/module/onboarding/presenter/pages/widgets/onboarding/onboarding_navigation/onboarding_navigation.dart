@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../../../widgets/text_typography/text_typography.dart';
-import 'onboarding_navigation_indicator_row/onboarding_navigation_indicator_row.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_navigation/onboarding_navigation_indicator_row/onboarding_navigation_indicator_row.dart';
+import 'package:tic_tac_toe_app/widgets/text_typography/text_typography.dart';
 
 class OnboardingNavigation extends StatefulWidget {
-  final bool isDarkMode;
-  final int currentStep;
-  final VoidCallback onPrevious;
-  final VoidCallback onNext;
-
   const OnboardingNavigation({
     required this.isDarkMode,
     required this.currentStep,
@@ -16,13 +10,16 @@ class OnboardingNavigation extends StatefulWidget {
     required this.onNext,
     super.key,
   });
+  final bool isDarkMode;
+  final int currentStep;
+  final VoidCallback onPrevious;
+  final VoidCallback onNext;
 
   @override
   State<OnboardingNavigation> createState() => _OnboardingNavigationState();
 }
 
 class _OnboardingNavigationState extends State<OnboardingNavigation> {
-
   @override
   void initState() {
     super.initState();

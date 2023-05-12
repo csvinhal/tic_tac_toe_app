@@ -2,9 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'module/app_module.dart';
-import 'module/app_widget.dart';
+import 'package:tic_tac_toe_app/module/app_module.dart';
+import 'package:tic_tac_toe_app/module/app_widget.dart';
 
 class _HttpOverrides extends HttpOverrides {
   @override

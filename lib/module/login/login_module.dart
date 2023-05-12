@@ -1,6 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'presenter/pages/login_page.dart';
+import 'package:tic_tac_toe_app/module/login/presenter/pages/login_page.dart';
 
 class LoginModule extends Module {
   @override
@@ -8,6 +7,6 @@ class LoginModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute('/', child: (_, __) => const LoginPage()),
+    ChildRoute<dynamic>('/', child: (_, __) => const LoginPage()),
   ];
 }

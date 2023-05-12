@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../core/modules/onboard/presenter/presentar.dart';
-import '../../../../core/modules/theme/presenter/cubits/theme_cubit.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubits/cubits.dart';
+import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
-  final OnboardCubit onboardingCubit;
-  final ThemeCubit themeCubit;
-
   const SplashScreen({
     required this.onboardingCubit,
     required this.themeCubit,
     super.key,
   });
+
+  final OnboardCubit onboardingCubit;
+  final ThemeCubit themeCubit;
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

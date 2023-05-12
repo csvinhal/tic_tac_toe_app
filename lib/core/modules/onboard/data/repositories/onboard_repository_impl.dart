@@ -11,9 +11,18 @@ class OnboardRepositoryImpl implements OnboardRepository {
   @override
   Future<Either<Exception, bool>> getIsOnboardViewed() async {
     try {
-      final isOnboardViewed =
-          await _onboardDatasource.getIsOnboardViewed();
+      final isOnboardViewed = await _onboardDatasource.getIsOnboardViewed();
       return Right(isOnboardViewed ?? false);
+    } on Exception catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<Exception, void>> putIsOnboardViewed(bool isViewed) async {
+    try {
+      await _onboardDatasource.putIsOnboardViewed(isViewed);
+      return const Right(null);
     } on Exception catch (e) {
       return Left(e);
     }

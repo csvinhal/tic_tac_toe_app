@@ -14,6 +14,10 @@ class OnboardUnviewedState extends OnboardState {
   const OnboardUnviewedState();
 }
 
+class OnboardFailureState extends OnboardState {
+  const OnboardFailureState();
+}
+
 class OnboardViewedState extends OnboardState {
   const OnboardViewedState();
 }

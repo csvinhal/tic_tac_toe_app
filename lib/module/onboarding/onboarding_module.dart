@@ -5,12 +5,16 @@ import 'presenter/pages/onboarding_page.dart';
 
 class OnboardingModule extends Module {
   @override
-  final List<Bind<Object>> binds = [
-    Bind.singleton((i) => OnboardingCubit())
-  ];
+  final List<Bind<Object>> binds = [Bind.singleton((i) => OnboardingCubit())];
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute('/', child: (_, __) => OnboardingPage(onboardingCubit: Modular.get(),)),
+    ChildRoute(
+      '/',
+      child: (_, __) => OnboardingPage(
+        onboardingCubit: Modular.get(),
+        onboardCubit: Modular.get(),
+      ),
+    ),
   ];
 }

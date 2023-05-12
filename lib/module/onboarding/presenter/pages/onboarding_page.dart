@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/modules/onboard/presenter/cubits/cubits.dart';
 import '../cubit/onboarding_cubit.dart';
 import 'widgets/onboarding/onboarding.dart';
 import 'widgets/onboarding/onboarding_navigation/onboarding_navigation.dart';
 
 class OnboardingPage extends StatefulWidget {
   final OnboardingCubit onboardingCubit;
+  final OnboardCubit onboardCubit;
 
   const OnboardingPage({
     required this.onboardingCubit,
+    required this.onboardCubit,
     super.key,
   });
 
@@ -64,6 +67,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               },
               onNext: () {
                 if (_pageController.page == 2) {
+                  _onboardCubit.updateOnboardViewedState();
                   Navigator.of(context).pushReplacementNamed('/login');
                   return;
                 }
@@ -81,4 +85,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   OnboardingCubit get _onboardingCubit => widget.onboardingCubit;
+
+  OnboardCubit get _onboardCubit => widget.onboardCubit;
 }

@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/entities.dart';
-import 'package:tic_tac_toe_app/widgets/text_typography/text_typography.dart';
+import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
 
-enum ButtonColors {
+enum AppButtonColors {
   standard,
   blue,
   red,
 }
 
-class Button extends StatelessWidget {
-  const Button(
+class AppButton extends StatelessWidget {
+  const AppButton(
     this.label, {
     required this.darkMode,
     this.icon,
-    this.color = ButtonColors.standard,
+    this.color = AppButtonColors.standard,
     this.disabled = false,
     super.key,
   });
 
   final String label;
   final String? icon;
-  final ButtonColors color;
+  final AppButtonColors color;
   final bool disabled;
   final bool darkMode;
 
@@ -83,21 +83,21 @@ class Button extends StatelessWidget {
       }
 
       switch (color) {
-        case ButtonColors.blue:
+        case AppButtonColors.blue:
           return styleColor?.blue ?? const Color(0xFF46A3FF);
-        case ButtonColors.red:
+        case AppButtonColors.red:
           return styleColor?.red ?? const Color(0xFFFF827E);
-        case ButtonColors.standard:
+        case AppButtonColors.standard:
           return styleColor?.darkBlue ?? const Color(0xFF212835);
       }
     }
 
     switch (color) {
-      case ButtonColors.blue:
+      case AppButtonColors.blue:
         return styleColor?.blue ?? const Color(0xFF225577);
-      case ButtonColors.red:
+      case AppButtonColors.red:
         return styleColor?.red ?? const Color(0xFFE45651);
-      case ButtonColors.standard:
+      case AppButtonColors.standard:
         return neutralColors?.lightGrey ?? const Color(0xFFE3E3E3);
     }
   }
@@ -118,11 +118,11 @@ class Button extends StatelessWidget {
     }
 
     switch (color) {
-      case ButtonColors.red:
+      case AppButtonColors.red:
         return styleColors?.red;
-      case ButtonColors.blue:
+      case AppButtonColors.blue:
         return styleColors?.blue;
-      case ButtonColors.standard:
+      case AppButtonColors.standard:
         return styleColors?.dark;
     }
   }
@@ -136,11 +136,11 @@ class Button extends StatelessWidget {
     }
 
     switch (color) {
-      case ButtonColors.red:
+      case AppButtonColors.red:
         return styleColors?.red;
-      case ButtonColors.blue:
+      case AppButtonColors.blue:
         return styleColors?.blue;
-      case ButtonColors.standard:
+      case AppButtonColors.standard:
         return neutralColors?.white;
     }
   }
@@ -162,10 +162,10 @@ class Button extends StatelessWidget {
     }
 
     switch (color) {
-      case ButtonColors.red:
-      case ButtonColors.blue:
+      case AppButtonColors.red:
+      case AppButtonColors.blue:
         return neutralColors?.white;
-      case ButtonColors.standard:
+      case AppButtonColors.standard:
         return textColors?.primary;
     }
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_navigation/onboarding_navigation_indicator_row/onboarding_navigation_indicator_row.dart';
-import 'package:tic_tac_toe_app/widgets/text_typography/text_typography.dart';
+import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
 
 class OnboardingNavigation extends StatefulWidget {
   const OnboardingNavigation({

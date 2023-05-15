@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/widgets/text_typography/text_typography.dart';
-import 'package:tic_tac_toe_app/widgets/text_typography/text_typography_type.dart';
+import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
+import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography_type.dart';
 
 class OnboardingContent extends StatelessWidget {
   const OnboardingContent({

@@ -22,8 +22,8 @@ class ThemeBuilder extends StatelessWidget {
       builder: (context, child) {
         final theme = ThemeData.light().copyWith(
           scaffoldBackgroundColor: const Color(0xFFFFFFFF),
-          colorScheme: const ColorScheme.dark().copyWith(
-            background: const Color(0xFF0C1017),
+          colorScheme: const ColorScheme.light().copyWith(
+            background: const Color(0xFFFFFFFF),
           ),
           textTheme: AppTextTheme.textTheme,
           extensions: ThemeExtensions.lightExtensions,

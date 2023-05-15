@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubits/onboard_cubit.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/presenter/theme_builder.dart';
 
@@ -11,9 +10,6 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeCubit = Modular.get<ThemeCubit>();
-    final onboardingCubit = Modular.get<OnboardCubit>();
-
-    debugPrint(onboardingCubit.toString());
 
     return BlocBuilder<ThemeCubit, ThemeMode>(
       bloc: themeCubit,

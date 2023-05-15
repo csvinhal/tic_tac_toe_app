@@ -7,6 +7,11 @@ class LoginModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute<dynamic>('/', child: (_, __) => const LoginPage()),
+    ChildRoute<dynamic>(
+      '/',
+      child: (_, __) => LoginPage(
+        themeCubit: Modular.get(),
+      ),
+    ),
   ];
 }

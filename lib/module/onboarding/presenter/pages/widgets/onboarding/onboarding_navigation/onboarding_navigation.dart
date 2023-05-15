@@ -35,9 +35,8 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
           duration: const Duration(milliseconds: 150),
           child: TextButton(
             onPressed: _currentStep == 0 ? null : _onPrevious,
-            child: TextTypography.secondary(
+            child: const TextTypography.secondary(
               'Back',
-              isDarkMode: _isDarkMode,
             ),
           ),
         ),
@@ -50,9 +49,8 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
         ),
         TextButton(
           onPressed: _onNext,
-          child: TextTypography(
+          child: const TextTypography(
             'Next',
-            isDarkMode: _isDarkMode,
           ),
         ),
       ],

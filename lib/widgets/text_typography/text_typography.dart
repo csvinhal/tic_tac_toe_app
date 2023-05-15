@@ -6,7 +6,6 @@ import 'package:tic_tac_toe_app/widgets/text_typography/text_typography_type.dar
 class TextTypography extends StatelessWidget {
   const TextTypography(
     this.text, {
-    required this.isDarkMode,
     this.type = TextTypographyType.body1,
     this.styleType = TextTypographyStyleType.primary,
     this.color,
@@ -14,13 +13,11 @@ class TextTypography extends StatelessWidget {
   });
   const TextTypography.secondary(
     this.text, {
-    required this.isDarkMode,
     this.type = TextTypographyType.body1,
     this.color,
     super.key,
   }) : styleType = TextTypographyStyleType.secondary;
 
-  final bool isDarkMode;
   final String text;
   final TextTypographyType type;
   final TextTypographyStyleType styleType;
@@ -28,7 +25,6 @@ class TextTypography extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textColors = Theme.of(context).extension<TextColors>();
     TextStyle? textStyle;
 
     switch (type) {
@@ -61,20 +57,22 @@ class TextTypography extends StatelessWidget {
         break;
     }
 
-    Color? textColor;
-
-    if (styleType == TextTypographyStyleType.secondary) {
-      textColor = textColors?.secondary;
-    } else {
-      textColor = textColors?.primary;
-    }
+    final defaultTextColor = _getColorByTextTypographyStyleType(context);
 
     return Text(
       text,
       style: textStyle?.copyWith(
-        color: color ?? textColor,
+        color: color ?? defaultTextColor,
       ),
       textAlign: TextAlign.center,
     );
+  }
+
+  Color? _getColorByTextTypographyStyleType(BuildContext context) {
+    final textColors = Theme.of(context).extension<TextColors>();
+
+    return styleType == TextTypographyStyleType.secondary
+        ? textColors?.secondary
+        : textColors?.primary;
   }
 }

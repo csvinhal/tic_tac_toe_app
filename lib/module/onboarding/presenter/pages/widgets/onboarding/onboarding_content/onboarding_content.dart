@@ -20,7 +20,6 @@ class OnboardingContent extends StatelessWidget {
       children: [
         TextTypography(
           title,
-          isDarkMode: isDarkMode,
           type: TextTypographyType.header2,
         ),
         SizedBox(
@@ -30,7 +29,6 @@ class OnboardingContent extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.0.w),
           child: TextTypography(
             description,
-            isDarkMode: isDarkMode,
             type: TextTypographyType.subtitle2,
           ),
         ),

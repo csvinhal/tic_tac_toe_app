@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
       listenWhen: (previous, current) => current is! OnboardLoadingState,
       listener: (context, state) {
         if (state is OnboardViewedState) {
-          Navigator.of(context).pushReplacementNamed('/');
+          Navigator.of(context).pushReplacementNamed('/login');
         } else if (state is OnboardUnviewedState) {
           Navigator.of(context).pushReplacementNamed('/onboarding');
         }

@@ -21,7 +21,11 @@ class LoginLogo extends StatelessWidget {
         return SizedBox(
           height: 140.0.h,
           width: 124.0.w,
-          child: Image.asset(AppImagessAssets.logo),
+          child: Image.asset(
+            themeCubit.isDarkMode
+                ? AppImagessAssets.logo
+                : AppImagessAssets.logoDark,
+          ),
         );
       },
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/presenter/theme_builder.dart';
@@ -20,10 +22,25 @@ class AppWidget extends StatelessWidget {
               routeInformationParser: Modular.routeInformationParser,
               routerDelegate: Modular.routerDelegate,
               debugShowCheckedModeBanner: false,
-              title: 'Tic Tac Toe',
+              onGenerateTitle: (context) {
+                return AppLocalizations.of(context).appTitle;
+              },
               themeMode: themeMode,
               theme: theme,
               darkTheme: darkTheme,
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: const [
+                Locale.fromSubtags(languageCode: 'en', countryCode: 'US'),
+                Locale.fromSubtags(
+                  languageCode: 'pt',
+                  countryCode: 'BR',
+                ),
+              ],
             );
           },
         );

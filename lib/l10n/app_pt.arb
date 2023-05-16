@@ -1,0 +1,8 @@
+{
+  "@@locale": "pt",
+  "appTitle": "Tic Tac Toe",
+  "loginPageWelcome": "Bem-vindo",
+  "loginPagePleaseSignIn": "Faça login para continuar.",
+  "loginPageSignInGoogle": "Login com Google.",
+  "loginPageSignInFacebook": "Login com Facebook."
+}

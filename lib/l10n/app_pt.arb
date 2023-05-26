@@ -1,8 +1,14 @@
 {
   "@@locale": "pt",
   "appTitle": "Tic Tac Toe",
-  "loginPageWelcome": "Bem-vindo",
-  "loginPagePleaseSignIn": "Faça login para continuar.",
-  "loginPageSignInGoogle": "Login com Google.",
-  "loginPageSignInFacebook": "Login com Facebook."
+  "loginSignInPageWelcome": "Bem-vindo",
+  "loginSignInPagePleaseSignIn": "Faça login para continuar.",
+  "loginSignInPageSignInGoogle": "Login com Google.",
+  "loginSignInPageSignInFacebook": "Login com Facebook.",
+  "loginPreparingPageConnectingToServer": "Conectando ao servidor",
+  "loginPreparingPageEstablishingSegureConnection": "Estabelecendo uma conexão segura",
+  "loginPreparingPageCheckingAccount": "Verificando uma conta",
+  "loginPreparingPageDone": "Finalizado",
+  "loginPreparingPageConnectionUnavailable": "Conexão com a Internet indisponível",
+  "loginPreparingPageTryAgain": "Tentar Novamente"
 }

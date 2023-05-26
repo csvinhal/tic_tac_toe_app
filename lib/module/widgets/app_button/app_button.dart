@@ -13,6 +13,7 @@ class AppButton extends StatelessWidget {
   const AppButton(
     this.label, {
     required this.darkMode,
+    required this.onTap,
     this.icon,
     this.color = AppButtonColors.standard,
     this.disabled = false,
@@ -24,6 +25,7 @@ class AppButton extends StatelessWidget {
   final AppButtonColors color;
   final bool disabled;
   final bool darkMode;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class AppButton extends StatelessWidget {
       child: InkWell(
         splashColor: Colors.transparent,
         borderRadius: borderRadius,
-        onTap: () {},
+        onTap: onTap,
         child: Container(
           height: 54.0.h,
           decoration: BoxDecoration(

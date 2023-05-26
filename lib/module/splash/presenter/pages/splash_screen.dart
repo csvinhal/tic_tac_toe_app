@@ -37,9 +37,9 @@ class _SplashScreenState extends State<SplashScreen> {
           Navigator.of(context).pushReplacementNamed('/onboarding');
         }
       },
-      child: SafeArea(
-        child: Scaffold(
-          body: Center(
+      child: Scaffold(
+        body: SafeArea(
+          child: Center(
             child: SizedBox(
               height: 200.0.h,
               width: 180.0.h,

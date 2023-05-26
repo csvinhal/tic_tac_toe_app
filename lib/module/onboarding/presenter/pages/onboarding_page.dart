@@ -36,9 +36,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: PageView.builder(
+    return Scaffold(
+      body: SafeArea(
+        child: PageView.builder(
           itemCount: _onboardingCubit.onboarding.length,
           controller: _pageController,
           pageSnapping: false,
@@ -50,35 +50,35 @@ class _OnboardingPageState extends State<OnboardingPage> {
             isDarkMode: false,
           ),
         ),
-        bottomNavigationBar: BlocBuilder<OnboardingCubit, int>(
-          bloc: _onboardingCubit,
-          buildWhen: (previous, current) => previous != current,
-          builder: (context, state) {
-            return OnboardingNavigation(
-              isDarkMode: false,
-              currentStep: _onboardingCubit.state,
-              onPrevious: () {
-                _onboardingCubit.onPageDecrement();
-                _pageController.previousPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeIn,
-                );
-              },
-              onNext: () {
-                if (_pageController.page == 2) {
-                  _onboardCubit.updateOnboardViewedState();
-                  Navigator.of(context).pushReplacementNamed('/login');
-                  return;
-                }
-                _onboardingCubit.onPageIncrement();
-                _pageController.nextPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeIn,
-                );
-              },
-            );
-          },
-        ),
+      ),
+      bottomNavigationBar: BlocBuilder<OnboardingCubit, int>(
+        bloc: _onboardingCubit,
+        buildWhen: (previous, current) => previous != current,
+        builder: (context, state) {
+          return OnboardingNavigation(
+            isDarkMode: false,
+            currentStep: _onboardingCubit.state,
+            onPrevious: () {
+              _onboardingCubit.onPageDecrement();
+              _pageController.previousPage(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeIn,
+              );
+            },
+            onNext: () {
+              if (_pageController.page == 2) {
+                _onboardCubit.updateOnboardViewedState();
+                Navigator.of(context).pushReplacementNamed('/login');
+                return;
+              }
+              _onboardingCubit.onPageIncrement();
+              _pageController.nextPage(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeIn,
+              );
+            },
+          );
+        },
       ),
     );
   }

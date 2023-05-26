@@ -57,8 +57,8 @@ class _LoadingProgressBarState extends State<LoadingProgressBar>
 
   @override
   void dispose() {
-    super.dispose();
     _animationController.dispose();
+    super.dispose();
   }
 
   @override

@@ -18,6 +18,7 @@ class LoadingProgress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextTypography(text),
         SizedBox(height: 12.0.h),

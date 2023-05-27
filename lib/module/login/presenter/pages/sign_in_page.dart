@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
 import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/button_container/button_container.dart';
 import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/login_logo.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography_type.dart';
+import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({
@@ -29,14 +28,14 @@ class SignInPage extends StatelessWidget {
                   children: [
                     LoginLogo(themeCubit: themeCubit),
                     SizedBox(height: 36.0.h),
-                    TextTypography(
+                    AppTypography(
                       AppLocalizations.of(context).loginSignInPageWelcome,
-                      type: TextTypographyType.header2,
+                      type: AppTypographyType.header2,
                     ),
                     SizedBox(height: 6.0.h),
-                    TextTypography.secondary(
+                    AppTypography.secondary(
                       AppLocalizations.of(context).loginSignInPagePleaseSignIn,
-                      type: TextTypographyType.subtitle2,
+                      type: AppTypographyType.subtitle2,
                     ),
                   ],
                 ),

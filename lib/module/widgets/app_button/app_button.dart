@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/entities.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
+import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 enum AppButtonColors {
   standard,
@@ -64,7 +64,7 @@ class AppButton extends StatelessWidget {
                     ),
                   ),
                 ),
-              TextTypography(
+              AppTypography(
                 label,
                 color: textColor,
               )

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_navigation/onboarding_navigation_indicator_row/onboarding_navigation_indicator_row.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
+import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class OnboardingNavigation extends StatefulWidget {
   const OnboardingNavigation({
@@ -35,7 +35,7 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
           duration: const Duration(milliseconds: 150),
           child: TextButton(
             onPressed: _currentStep == 0 ? null : _onPrevious,
-            child: const TextTypography.secondary(
+            child: const AppTypography.secondary(
               'Back',
             ),
           ),
@@ -49,7 +49,7 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
         ),
         TextButton(
           onPressed: _onNext,
-          child: const TextTypography(
+          child: const AppTypography(
             'Next',
           ),
         ),

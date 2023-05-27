@@ -1,4 +1,0 @@
-enum TextTypographyStyleType {
-  primary,
-  secondary,
-}

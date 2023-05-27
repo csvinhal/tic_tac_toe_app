@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography_type.dart';
+import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class ScoreItem extends StatelessWidget {
   const ScoreItem({
@@ -17,8 +16,8 @@ class ScoreItem extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
-          TextTypography(value, type: TextTypographyType.header1),
-          TextTypography.secondary(label),
+          AppTypography(value, type: AppTypographyType.header1),
+          AppTypography.secondary(label),
         ],
       ),
     );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography_type.dart';
+import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class OnboardingContent extends StatelessWidget {
   const OnboardingContent({
@@ -18,18 +17,18 @@ class OnboardingContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextTypography(
+        AppTypography(
           title,
-          type: TextTypographyType.header2,
+          type: AppTypographyType.header2,
         ),
         SizedBox(
           height: 16.0.h,
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-          child: TextTypography(
+          child: AppTypography(
             description,
-            type: TextTypographyType.subtitle2,
+            type: AppTypographyType.subtitle2,
           ),
         ),
       ],

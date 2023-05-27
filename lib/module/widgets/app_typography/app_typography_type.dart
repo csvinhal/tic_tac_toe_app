@@ -1,4 +1,4 @@
-enum TextTypographyType {
+enum AppTypographyType {
   header1,
   header2,
   subtitle1,

@@ -1,0 +1,4 @@
+enum AppTypographyStyleType {
+  primary,
+  secondary,
+}

@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:tic_tac_toe_app/module/home/domain/entities/game.dart';
 import 'package:tic_tac_toe_app/module/home/domain/entities/game_status_type.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography_type.dart';
+import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class GameHistoryList extends StatelessWidget {
   const GameHistoryList({
@@ -37,15 +36,15 @@ class GameHistoryList extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextTypography(game.opponentsName),
+                AppTypography(game.opponentsName),
                 SizedBox(height: 4.h),
-                TextTypography.secondary(
+                AppTypography.secondary(
                   dateFormat.format(game.date),
-                  type: TextTypographyType.body2,
+                  type: AppTypographyType.body2,
                 ),
               ],
             ),
-            TextTypography(
+            AppTypography(
               game.status.text(context).toUpperCase(),
               color: game.status.color(context, isDarkMode: isDarkMode),
             )

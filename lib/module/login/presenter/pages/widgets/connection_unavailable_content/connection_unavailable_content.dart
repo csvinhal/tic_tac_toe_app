@@ -4,8 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
 import 'package:tic_tac_toe_app/module/app_icons_assets.dart';
-import 'package:tic_tac_toe_app/module/widgets/app_button/app_button.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
+import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class ConnectionUnavailableContent extends StatelessWidget {
   const ConnectionUnavailableContent({
@@ -28,7 +27,7 @@ class ConnectionUnavailableContent extends StatelessWidget {
           children: [
             Expanded(
               child: Center(
-                child: TextTypography(text),
+                child: AppTypography(text),
               ),
             ),
             Padding(

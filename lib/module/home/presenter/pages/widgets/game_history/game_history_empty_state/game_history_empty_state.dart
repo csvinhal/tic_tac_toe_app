@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
-import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography_type.dart';
+import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class GameHistoryEmptyState extends StatelessWidget {
   const GameHistoryEmptyState({
@@ -16,14 +15,14 @@ class GameHistoryEmptyState extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          TextTypography(
+          AppTypography(
             AppLocalizations.of(context).homeHomePageGameHistoryEmpty,
-            type: TextTypographyType.subtitle2,
+            type: AppTypographyType.subtitle2,
           ),
-          TextTypography.secondary(
+          AppTypography.secondary(
             AppLocalizations.of(context)
                 .homeHomePageGameHistoryEmptyDescription,
-            type: TextTypographyType.subtitle2,
+            type: AppTypographyType.subtitle2,
           ),
         ],
       ),

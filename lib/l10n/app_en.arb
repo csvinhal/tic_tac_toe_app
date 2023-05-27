@@ -10,5 +10,8 @@
   "loginPreparingPageCheckingAccount": "Checking for an Account",
   "loginPreparingPageDone": "Done",
   "loginPreparingPageConnectionUnavailable": "Internet Connection Unavailable",
-  "loginPreparingPageTryAgain": "Try Again"
+  "loginPreparingPageTryAgain": "Try Again",
+  "homeHomePageWins": "Wins",
+  "homeHomePageLosses": "Loosess",
+  "homeHomePageDraws": "Draws"
 }

@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tic_tac_toe_app/module/login/presenter/cubit/preparing_state.dart';
 
@@ -12,8 +11,6 @@ class PreparingCubit extends Cubit<PreparingState> {
     emit(state.copyWith(step: ConnectionStep.connecting));
 
     final random = Random().nextInt(2);
-
-    debugPrint(random.toString());
 
     if (random == 0) {
       await _dispatchStepWithDelay(ConnectionStep.establishing);

@@ -10,5 +10,8 @@
   "loginPreparingPageCheckingAccount": "Verificando uma conta",
   "loginPreparingPageDone": "Finalizado",
   "loginPreparingPageConnectionUnavailable": "Conexão com a Internet indisponível",
-  "loginPreparingPageTryAgain": "Tentar Novamente"
+  "loginPreparingPageTryAgain": "Tentar Novamente",
+  "homeHomePageWins": "Vitórias",
+  "homeHomePageLosses": "Derrotas",
+  "homeHomePageDraws": "Empates"
 }

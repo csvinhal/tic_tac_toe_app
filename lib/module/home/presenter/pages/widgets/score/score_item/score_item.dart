@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/color_styles.dart';
 import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography.dart';
 import 'package:tic_tac_toe_app/module/widgets/text_typography/text_typography_type.dart';
 

@@ -16,13 +16,11 @@ class ScoreItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
-            children: [
-              TextTypography(value, type: TextTypographyType.header1),
-              TextTypography.secondary(label),
-            ],
-          ),
-        
-      
+        children: [
+          TextTypography(value, type: TextTypographyType.header1),
+          TextTypography.secondary(label),
+        ],
+      ),
     );
   }
 }

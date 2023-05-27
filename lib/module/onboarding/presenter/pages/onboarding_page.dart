@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubits/onboard_cubit.dart';
-import 'package:tic_tac_toe_app/module/onboarding/presenter/cubit/onboarding_cubit.dart';
-import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding.dart';
-import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_navigation/onboarding_navigation.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/cubit/cubit.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/widgets.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({

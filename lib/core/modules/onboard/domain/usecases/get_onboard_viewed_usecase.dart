@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/domain/repositories/onboard_repository.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/domain/domain.dart';
 
 abstract class GetOnboardViewedUseCase {
   Future<Either<Exception, bool>> call();

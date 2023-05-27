@@ -1,9 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/data/datasource/onboard_datasource.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/data/repositories/onboard_repository_impl.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/domain/usecases/get_onboard_viewed_usecase.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/domain/usecases/update_onboard_viewed_usecase.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubits/onboard_cubit.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/data/data.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/domain/domain.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubit/onboard_cubit.dart';
 import 'package:tic_tac_toe_app/core/shared/services/local_storage_service.dart';
 
 class OnboardModule extends Module {

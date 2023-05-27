@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/app_images_assets.dart';
 
 class LoginLogo extends StatelessWidget {

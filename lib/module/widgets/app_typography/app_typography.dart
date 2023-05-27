@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/text_colors.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class AppTypography extends StatelessWidget {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_content/onboarding_content.dart';
-import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_image/onboarding_image.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/widgets.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({

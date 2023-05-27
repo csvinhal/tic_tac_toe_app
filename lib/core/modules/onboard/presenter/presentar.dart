@@ -1,1 +1,1 @@
-export 'cubits/cubits.dart';
+export 'cubit/cubit.dart';

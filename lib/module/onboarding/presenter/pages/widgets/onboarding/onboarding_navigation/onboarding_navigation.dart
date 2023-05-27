@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/onboarding/onboarding_navigation/onboarding_navigation_indicator_row/onboarding_navigation_indicator_row.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/widgets.dart';
 import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class OnboardingNavigation extends StatefulWidget {

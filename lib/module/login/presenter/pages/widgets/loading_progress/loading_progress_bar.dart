@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/color_styles.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 
 class LoadingProgressBar extends StatefulWidget {
   const LoadingProgressBar({

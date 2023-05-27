@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/domain/usecases/get_onboard_viewed_usecase.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/domain/usecases/update_onboard_viewed_usecase.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubits/cubits.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/domain/domain.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/presenter/cubit/cubit.dart';
 
 class OnboardCubit extends Cubit<OnboardState> {
   OnboardCubit({

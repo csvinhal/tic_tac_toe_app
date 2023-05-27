@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/presenter/cubits/theme_cubit.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/button_container/button_container.dart';
 import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/login_logo.dart';
 import 'package:tic_tac_toe_app/module/widgets/widgets.dart';

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/data/datasource/onboard_datasource.dart';
-import 'package:tic_tac_toe_app/core/modules/onboard/domain/repositories/onboard_repository.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/data/data.dart';
+import 'package:tic_tac_toe_app/core/modules/onboard/domain/domain.dart';
 
 class OnboardRepositoryImpl implements OnboardRepository {
   const OnboardRepositoryImpl(this._onboardDatasource);

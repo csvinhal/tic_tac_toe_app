@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/color_styles.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 
 enum GameStatusType {
   won,

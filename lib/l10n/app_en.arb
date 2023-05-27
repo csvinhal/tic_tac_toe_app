@@ -11,7 +11,13 @@
   "loginPreparingPageDone": "Done",
   "loginPreparingPageConnectionUnavailable": "Internet Connection Unavailable",
   "loginPreparingPageTryAgain": "Try Again",
-  "homeHomePageWins": "Wins",
-  "homeHomePageLosses": "Loosess",
-  "homeHomePageDraws": "Draws"
+  "homeHomePageScoreWins": "Wins",
+  "homeHomePageScoreLosses": "Losses",
+  "homeHomePageScoreDraws": "Draws",
+  "homeHomePageGameHistoryTitle": "Game History",
+  "homeHomePageGameHistoryEmpty": "Empty",
+  "homeHomePageGameHistoryEmptyDescription": "Play some game",
+  "homeHomePageGameHistoryGameStatusWon": "Won",
+  "homeHomePageGameHistoryGameStatusLost": "Lost",
+  "homeHomePageGameHistoryGameStatusDraw": "Draw"
 }

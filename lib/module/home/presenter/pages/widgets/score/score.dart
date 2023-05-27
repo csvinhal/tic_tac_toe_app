@@ -25,17 +25,17 @@ class Score extends StatelessWidget {
       child: Row(
         children: [
           ScoreItem(
-            label: AppLocalizations.of(context).homeHomePageWins,
+            label: AppLocalizations.of(context).homeHomePageScoreWins,
             value: wins,
           ),
           ScoreBorder(isDarkMode: isDarkMode),
           ScoreItem(
-            label: AppLocalizations.of(context).homeHomePageLosses,
+            label: AppLocalizations.of(context).homeHomePageScoreLosses,
             value: losses,
           ),
           ScoreBorder(isDarkMode: isDarkMode),
           ScoreItem(
-            label: AppLocalizations.of(context).homeHomePageDraws,
+            label: AppLocalizations.of(context).homeHomePageScoreDraws,
             value: draws,
           ),
         ],

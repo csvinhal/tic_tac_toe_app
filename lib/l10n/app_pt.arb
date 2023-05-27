@@ -11,7 +11,14 @@
   "loginPreparingPageDone": "Finalizado",
   "loginPreparingPageConnectionUnavailable": "Conexão com a Internet indisponível",
   "loginPreparingPageTryAgain": "Tentar Novamente",
-  "homeHomePageWins": "Vitórias",
-  "homeHomePageLosses": "Derrotas",
-  "homeHomePageDraws": "Empates"
+  "homeHomePageScoreWins": "Vitórias",
+  "homeHomePageScoreLosses": "Derrotas",
+  "homeHomePageScoreDraws": "Empates",
+  "homeHomePageDraws": "Empates",
+  "homeHomePageGameHistoryTitle": "História de jogos",
+  "homeHomePageGameHistoryEmpty": "Vazio",
+  "homeHomePageGameHistoryEmptyDescription": "Jogue um jogo",
+  "homeHomePageGameHistoryGameStatusWon": "Vitória",
+  "homeHomePageGameHistoryGameStatusLost": "Derrota",
+  "homeHomePageGameHistoryGameStatusDraw": "Empate"
 }

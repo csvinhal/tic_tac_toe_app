@@ -13,8 +13,6 @@ class PreparingCubit extends Cubit<PreparingState> {
 
     final random = Random().nextInt(2);
 
-    debugPrint(random.toString());
-
     if (random == 0) {
       await _dispatchStepWithDelay(ConnectionStep.establishing);
       await _dispatchStepWithDelay(ConnectionStep.checking);

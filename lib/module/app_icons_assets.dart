@@ -19,5 +19,22 @@ class AppIconsAssets {
   static const search = '$_path/search.png';
   static const searchDark = '$_path/search_dark.png';
 
+  static const home = '$_path/home.png';
+  static const homeSelected = '$_path/home_selected.png';
+  static const homeDark = '$_path/home_dark.png';
+  static const homeDarkSelected = '$_path/home_dark_selected.png';
+
+  static const games = '$_path/games.png';
+  static const gamesSelected = '$_path/games_selected.png';
+  static const gamesDark = '$_path/games_dark.png';
+  static const gamesDarkSelected = '$_path/games_dark_selected.png';
+
+  static const people = '$_path/people.png';
+  static const peopleSelected = '$_path/people_selected.png';
+  static const peopleDark = '$_path/people_dark.png';
+  static const peopleDarkSelected = '$_path/people_dark_selected.png';
+
+
+
   static const _path = 'assets/icons';
 }

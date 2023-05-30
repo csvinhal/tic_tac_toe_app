@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TextColors extends ThemeExtension<TextColors> {
+class TextColors {
   const TextColors({
     required this.primary,
     required this.secondary,
@@ -9,8 +9,7 @@ class TextColors extends ThemeExtension<TextColors> {
   final Color? primary;
   final Color? secondary;
 
-  @override
-  ThemeExtension<TextColors> copyWith({
+  TextColors copyWith({
     Color? primary,
     Color? secondary,
   }) {
@@ -20,14 +19,10 @@ class TextColors extends ThemeExtension<TextColors> {
     );
   }
 
-  @override
-  ThemeExtension<TextColors> lerp(ThemeExtension<TextColors>? other, double t) {
-    if (other is! TextColors) {
-      return this;
-    }
+  TextColors lerp(TextColors? other, double t) {
     return TextColors(
-      primary: Color.lerp(primary, other.primary, t),
-      secondary: Color.lerp(secondary, other.secondary, t),
+      primary: Color.lerp(primary, other?.primary, t),
+      secondary: Color.lerp(secondary, other?.secondary, t),
     );
   }
 }

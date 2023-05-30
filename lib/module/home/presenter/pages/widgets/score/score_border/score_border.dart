@@ -12,11 +12,11 @@ class ScoreBorder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final neutralColors = Theme.of(context).extension<NeutralColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     final borderColor = isDarkMode
-        ? neutralColors?.darkerGrey ?? const Color(0xFF575757)
-        : neutralColors?.lightGrey ?? const Color(0xFFF1F1F1);
+        ? ticTacToeTheme?.neutralColors.darkerGrey ?? const Color(0xFF575757)
+        : ticTacToeTheme?.neutralColors.lightGrey ?? const Color(0xFFF1F1F1);
 
     return Container(
       height: 24.h,

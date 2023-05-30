@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/entities.dart';
 import 'package:tic_tac_toe_app/module/app_icons_assets.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/pages/widgets/bottom_bar/bottom_bar_item.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({
@@ -16,30 +14,28 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final styleColors = Theme.of(context).extension<StyleColors>();
-
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
-      padding: EdgeInsets.symmetric(vertical: 8.h),
-      decoration: BoxDecoration(
-        color: isDarkMode ? styleColors?.darkerBlue : styleColors?.blue,
-        borderRadius: BorderRadius.circular(12.r),
-      ),
-      child: Row(
-        children: [
-          BottomBarItem(
-            icon: homeIcon,
-            onTap: () {},
-          ),
-          BottomBarItem(
-            icon: gamesIcon,
-            onTap: () {},
-          ),
-          BottomBarItem(
-            icon: peopleIcon,
-            onTap: () {},
-          ),
-        ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12.r),
+      child: SizedBox(
+        height: 64.h,
+        child: BottomNavigationBar(
+          iconSize: 24.w,
+          selectedFontSize: 0,
+          items: [
+            BottomNavigationBarItem(
+              icon: Image.asset(homeIcon),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(gamesIcon),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(peopleIcon),
+              label: '',
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -68,10 +68,10 @@ class AppTypography extends StatelessWidget {
   }
 
   Color? _getColorByTextTypographyStyleType(BuildContext context) {
-    final textColors = Theme.of(context).extension<TextColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     return styleType == AppTypographyStyleType.secondary
-        ? textColors?.secondary
-        : textColors?.primary;
+        ? ticTacToeTheme?.textColors.secondary
+        : ticTacToeTheme?.textColors.primary;
   }
 }

@@ -63,12 +63,13 @@ class _LoadingProgressBarState extends State<LoadingProgressBar>
 
   @override
   Widget build(BuildContext context) {
-    final neutralColors = Theme.of(context).extension<NeutralColors>();
-    final styleColors = Theme.of(context).extension<StyleColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
-    final backgroundColor =
-        _darkMode ? neutralColors?.grey : neutralColors?.lightGrey;
-    final progressColor = styleColors?.blue ?? const Color(0xFF46A3FF);
+    final backgroundColor = _darkMode
+        ? ticTacToeTheme?.neutralColors.grey
+        : ticTacToeTheme?.neutralColors.lightGrey;
+    final progressColor =
+        ticTacToeTheme?.styleColors.blue ?? const Color(0xFF46A3FF);
 
     return Material(
       color: Colors.transparent,

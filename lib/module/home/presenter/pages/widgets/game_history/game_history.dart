@@ -17,9 +17,8 @@ class GameHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GameHistoryContainer(
-      isDarkMode: isDarkMode,
       child: games.isEmpty
-          ? GameHistoryEmptyState(isDarkMode: isDarkMode)
+          ? const GameHistoryEmptyState()
           : GameHistoryList(games: games, isDarkMode: isDarkMode),
     );
   }

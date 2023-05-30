@@ -13,12 +13,12 @@ class OnboardingNavigationIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final neutralColors = Theme.of(context).extension<NeutralColors>();
-    final styleColors = Theme.of(context).extension<StyleColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
-    final activeColor = styleColors?.blue;
-    final defaultColor =
-        isDarkMode ? neutralColors?.lightGrey : neutralColors?.grey;
+    final activeColor = ticTacToeTheme?.styleColors.blue;
+    final defaultColor = isDarkMode
+        ? ticTacToeTheme?.neutralColors.lightGrey
+        : ticTacToeTheme?.neutralColors.grey;
 
     return Container(
       width: 12.0.w,

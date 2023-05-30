@@ -24,16 +24,17 @@ extension GameStatusTypeExtension on GameStatusType {
   }
 
   Color? color(BuildContext context, {required bool isDarkMode}) {
-    final styleColors = Theme.of(context).extension<StyleColors>();
-    final neutralColors = Theme.of(context).extension<NeutralColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     switch (this) {
       case GameStatusType.won:
-        return styleColors?.green;
+        return ticTacToeTheme?.styleColors.green;
       case GameStatusType.lost:
-        return styleColors?.red;
+        return ticTacToeTheme?.styleColors.red;
       case GameStatusType.draw:
-        return isDarkMode ? neutralColors?.darkGrey : neutralColors?.grey;
+        return isDarkMode
+            ? ticTacToeTheme?.neutralColors.darkGrey
+            : ticTacToeTheme?.neutralColors.grey;
     }
   }
 }

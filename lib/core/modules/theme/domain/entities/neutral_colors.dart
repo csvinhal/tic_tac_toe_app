@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NeutralColors extends ThemeExtension<NeutralColors> {
+class NeutralColors {
   const NeutralColors({
     required this.white,
     required this.lighterGrey,
@@ -21,8 +21,7 @@ class NeutralColors extends ThemeExtension<NeutralColors> {
   final Color? darkestGrey;
   final Color? black;
 
-  @override
-  ThemeExtension<NeutralColors> copyWith({
+  NeutralColors copyWith({
     Color? white,
     Color? lighterGrey,
     Color? lightGrey,
@@ -44,23 +43,19 @@ class NeutralColors extends ThemeExtension<NeutralColors> {
     );
   }
 
-  @override
-  ThemeExtension<NeutralColors> lerp(
-    ThemeExtension<NeutralColors>? other,
+  NeutralColors lerp(
+    NeutralColors? other,
     double t,
   ) {
-    if (other is! NeutralColors) {
-      return this;
-    }
     return NeutralColors(
-      white: Color.lerp(white, other.white, t),
-      lighterGrey: Color.lerp(lighterGrey, other.lighterGrey, t),
-      lightGrey: Color.lerp(lightGrey, other.lightGrey, t),
-      grey: Color.lerp(grey, other.grey, t),
-      darkGrey: Color.lerp(darkGrey, other.darkGrey, t),
-      darkerGrey: Color.lerp(darkerGrey, other.darkerGrey, t),
-      darkestGrey: Color.lerp(darkestGrey, other.darkestGrey, t),
-      black: Color.lerp(black, other.black, t),
+      white: Color.lerp(white, other?.white, t),
+      lighterGrey: Color.lerp(lighterGrey, other?.lighterGrey, t),
+      lightGrey: Color.lerp(lightGrey, other?.lightGrey, t),
+      grey: Color.lerp(grey, other?.grey, t),
+      darkGrey: Color.lerp(darkGrey, other?.darkGrey, t),
+      darkerGrey: Color.lerp(darkerGrey, other?.darkerGrey, t),
+      darkestGrey: Color.lerp(darkestGrey, other?.darkestGrey, t),
+      black: Color.lerp(black, other?.black, t),
     );
   }
 }

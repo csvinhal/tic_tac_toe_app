@@ -3,12 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class GameHistoryEmptyState extends StatelessWidget {
-  const GameHistoryEmptyState({
-    required this.isDarkMode,
-    super.key,
-  });
-
-  final bool isDarkMode;
+  const GameHistoryEmptyState({super.key});
 
   @override
   Widget build(BuildContext context) {

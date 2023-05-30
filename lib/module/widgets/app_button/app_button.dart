@@ -76,31 +76,33 @@ class AppButton extends StatelessWidget {
   }
 
   Color _getBorderColor(BuildContext context) {
-    final neutralColors = Theme.of(context).extension<NeutralColors>();
-    final styleColor = Theme.of(context).extension<StyleColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     if (darkMode) {
       if (disabled) {
-        return neutralColors?.darkerGrey ?? const Color(0xFF575757);
+        return ticTacToeTheme?.neutralColors.darkerGrey ??
+            const Color(0xFF575757);
       }
 
       switch (color) {
         case AppButtonColors.blue:
-          return styleColor?.blue ?? const Color(0xFF46A3FF);
+          return ticTacToeTheme?.styleColors.blue ?? const Color(0xFF46A3FF);
         case AppButtonColors.red:
-          return styleColor?.red ?? const Color(0xFFFF827E);
+          return ticTacToeTheme?.styleColors.red ?? const Color(0xFFFF827E);
         case AppButtonColors.standard:
-          return styleColor?.darkBlue ?? const Color(0xFF212835);
+          return ticTacToeTheme?.styleColors.darkBlue ??
+              const Color(0xFF212835);
       }
     }
 
     switch (color) {
       case AppButtonColors.blue:
-        return styleColor?.blue ?? const Color(0xFF225577);
+        return ticTacToeTheme?.styleColors.blue ?? const Color(0xFF225577);
       case AppButtonColors.red:
-        return styleColor?.red ?? const Color(0xFFE45651);
+        return ticTacToeTheme?.styleColors.red ?? const Color(0xFFE45651);
       case AppButtonColors.standard:
-        return neutralColors?.lightGrey ?? const Color(0xFFE3E3E3);
+        return ticTacToeTheme?.neutralColors.lightGrey ??
+            const Color(0xFFE3E3E3);
     }
   }
 
@@ -112,63 +114,60 @@ class AppButton extends StatelessWidget {
   }
 
   Color? _getDarkDefaultColor(BuildContext context) {
-    final neutralColors = Theme.of(context).extension<NeutralColors>();
-    final styleColors = Theme.of(context).extension<StyleColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     if (disabled) {
-      return neutralColors?.darkerGrey;
+      return ticTacToeTheme?.neutralColors.darkerGrey;
     }
 
     switch (color) {
       case AppButtonColors.red:
-        return styleColors?.red;
+        return ticTacToeTheme?.styleColors.red;
       case AppButtonColors.blue:
-        return styleColors?.blue;
+        return ticTacToeTheme?.styleColors.blue;
       case AppButtonColors.standard:
-        return styleColors?.dark;
+        return ticTacToeTheme?.styleColors.dark;
     }
   }
 
   Color? _getLightDefaultColor(BuildContext context) {
-    final neutralColors = Theme.of(context).extension<NeutralColors>();
-    final styleColors = Theme.of(context).extension<StyleColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     if (disabled) {
-      return neutralColors?.lightGrey;
+      return ticTacToeTheme?.neutralColors.lightGrey;
     }
 
     switch (color) {
       case AppButtonColors.red:
-        return styleColors?.red;
+        return ticTacToeTheme?.styleColors.red;
       case AppButtonColors.blue:
-        return styleColors?.blue;
+        return ticTacToeTheme?.styleColors.blue;
       case AppButtonColors.standard:
-        return neutralColors?.white;
+        return ticTacToeTheme?.neutralColors.white;
     }
   }
 
   Color? _getTextColor(BuildContext context) {
-    final neutralColors = Theme.of(context).extension<NeutralColors>();
-    final textColors = Theme.of(context).extension<TextColors>();
+    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     if (darkMode) {
       if (disabled) {
-        return neutralColors?.darkestGrey;
+        return ticTacToeTheme?.neutralColors.darkestGrey;
       }
 
-      return textColors?.primary;
+      return ticTacToeTheme?.textColors.primary;
     }
 
     if (disabled) {
-      return neutralColors?.grey;
+      return ticTacToeTheme?.neutralColors.grey;
     }
 
     switch (color) {
       case AppButtonColors.red:
       case AppButtonColors.blue:
-        return neutralColors?.white;
+        return ticTacToeTheme?.neutralColors.white;
       case AppButtonColors.standard:
-        return textColors?.primary;
+        return ticTacToeTheme?.textColors.primary;
     }
   }
 }

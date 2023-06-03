@@ -35,6 +35,26 @@ class AppTypographyThemeData extends Equatable with Diagnosticable {
 
   @override
   List<Object?> get props => [primaryColor, secondaryColor];
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'primaryColor',
+          primaryColor,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'secondaryColor',
+          secondaryColor,
+          defaultValue: null,
+        ),
+      );
+  }
 }
 
 class AppTypographyTheme extends InheritedTheme {

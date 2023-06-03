@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 
-class TicTacToeTheme extends ThemeExtension<TicTacToeTheme> {
+class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
+    with Diagnosticable {
   const TicTacToeTheme({
     required this.neutralColors,
     required this.styleColors,
@@ -63,5 +65,43 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme> {
         t,
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+        DiagnosticsProperty<NeutralColors?>(
+          'neutralColors',
+          neutralColors,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<StyleColors?>(
+          'styleColors',
+          styleColors,
+          defaultValue: null,
+        ),
+      )..add(
+        DiagnosticsProperty<AppButtonThemeData?>(
+          'appButtonThemeData',
+          appButtonThemeData,
+          defaultValue: null,
+        ),
+      )..add(
+        DiagnosticsProperty<AppTypographyThemeData?>(
+          'appTypographyThemeData',
+          appTypographyThemeData,
+          defaultValue: null,
+        ),
+      )..add(
+        DiagnosticsProperty<LoadingProgressBarThemeData?>(
+          'loadingProgressBarThemeData',
+          loadingProgressBarThemeData,
+          defaultValue: null,
+        ),
+      );
   }
 }

@@ -36,6 +36,26 @@ class LoadingProgressBarThemeData extends Equatable with Diagnosticable {
 
   @override
   List<Object?> get props => [backgroundColor, progressColor];
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'backgroundColor',
+          backgroundColor,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'progressColor',
+          progressColor,
+          defaultValue: null,
+        ),
+      );
+  }
 }
 
 class LoadingProgressBarTheme extends InheritedTheme {

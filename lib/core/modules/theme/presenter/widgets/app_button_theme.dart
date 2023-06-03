@@ -75,6 +75,54 @@ class AppButtonThemeData extends Equatable with Diagnosticable {
         normalColor,
         normalBorderColor,
       ];
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'disabledButtonColor',
+          disabledButtonColor,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'disabledTextColor',
+          disabledTextColor,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'primaryColor',
+          primaryColor,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'accentColor',
+          accentColor,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'normalColor',
+          normalColor,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<Color?>(
+          'normalBorderColor',
+          normalBorderColor,
+          defaultValue: null,
+        ),
+      );
+  }
 }
 
 class AppButtonTheme extends InheritedTheme {

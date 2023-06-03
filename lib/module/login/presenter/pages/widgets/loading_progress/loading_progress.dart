@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/loading_progress/loading_progress_bar.dart';
-import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class LoadingProgress extends StatelessWidget {
   const LoadingProgress({

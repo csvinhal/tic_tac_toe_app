@@ -66,10 +66,10 @@ class _LoadingProgressBarState extends State<LoadingProgressBar>
     final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     final backgroundColor = _darkMode
-        ? ticTacToeTheme?.neutralColors.grey
-        : ticTacToeTheme?.neutralColors.lightGrey;
+        ? ticTacToeTheme?.neutralColors?.grey
+        : ticTacToeTheme?.neutralColors?.lightGrey;
     final progressColor =
-        ticTacToeTheme?.styleColors.blue ?? const Color(0xFF46A3FF);
+        ticTacToeTheme?.styleColors?.blue ?? const Color(0xFF46A3FF);
 
     return Material(
       color: Colors.transparent,

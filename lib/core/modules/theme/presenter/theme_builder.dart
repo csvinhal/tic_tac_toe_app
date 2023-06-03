@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/app_text_theme.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/presenter/app_dark_theme.dart';
 import 'package:tic_tac_toe_app/core/modules/theme/presenter/app_light_theme.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/presenter/tic_tac_toe_dark_theme.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/presenter/tic_tac_toe_light_theme.dart';
 
 class ThemeBuilder extends StatelessWidget {
   const ThemeBuilder({

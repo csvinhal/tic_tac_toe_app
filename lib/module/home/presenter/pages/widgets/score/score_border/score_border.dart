@@ -15,8 +15,8 @@ class ScoreBorder extends StatelessWidget {
     final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
     final borderColor = isDarkMode
-        ? ticTacToeTheme?.neutralColors.darkerGrey ?? const Color(0xFF575757)
-        : ticTacToeTheme?.neutralColors.lightGrey ?? const Color(0xFFF1F1F1);
+        ? ticTacToeTheme?.neutralColors?.darkerGrey ?? const Color(0xFF575757)
+        : ticTacToeTheme?.neutralColors?.lightGrey ?? const Color(0xFFF1F1F1);
 
     return Container(
       height: 24.h,

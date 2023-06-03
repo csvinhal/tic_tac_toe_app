@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 
 class GameHistoryEmptyState extends StatelessWidget {
   const GameHistoryEmptyState({super.key});

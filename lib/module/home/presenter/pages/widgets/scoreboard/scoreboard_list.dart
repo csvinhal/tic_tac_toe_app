@@ -3,20 +3,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/app_icons_assets.dart';
 import 'package:tic_tac_toe_app/module/home/domain/domain.dart';
-import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class ScoreboardList extends StatelessWidget {
   const ScoreboardList({
     required this.scores,
+    required this.isDarkMode,
     super.key,
   });
 
   final List<ScoreboardItem> scores;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
     final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
     var position = 0;
+
     return Padding(
       padding: EdgeInsets.fromLTRB(14.w, 14.h, 14.w, 8.h),
       child: Column(
@@ -27,14 +29,20 @@ class ScoreboardList extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                      height: 12.h, child: Image.asset(AppIconsAssets.star)),
+                    height: 12.h,
+                    child: Image.asset(
+                      isDarkMode
+                          ? AppIconsAssets.starDark
+                          : AppIconsAssets.star,
+                    ),
+                  ),
                   SizedBox(width: 10.w),
                   AppTypography('${position += 1}. ${score.nickname}'),
                   const Spacer(),
                   AppTypography(
                     score.value.toString(),
                     type: AppTypographyType.body1m,
-                    color: ticTacToeTheme?.styleColors.yellow,
+                    color: ticTacToeTheme?.styleColors?.yellow,
                   )
                 ],
               ),

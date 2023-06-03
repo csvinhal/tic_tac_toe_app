@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/home/domain/domain.dart';
 import 'package:tic_tac_toe_app/module/home/presenter/pages/widgets/widgets.dart';
-import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -103,14 +102,20 @@ class _HomePageState extends State<HomePage> {
                     type: AppTypographyType.subtitle1,
                   ),
                   SizedBox(height: 12.h),
-                  Scoreboard(
-                    scores: [
-                      ScoreboardItem(nickname: 'Will Smith', value: 250),
-                      ScoreboardItem(nickname: 'Will Smith', value: 230),
-                      ScoreboardItem(nickname: 'Will Smith', value: 210),
-                      ScoreboardItem(nickname: 'Will Smith', value: 190),
-                      ScoreboardItem(nickname: 'Will Smith', value: 170),
-                    ],
+                  BlocBuilder<ThemeCubit, ThemeMode>(
+                    bloc: _themeCubit,
+                    builder: (context, state) {
+                      return Scoreboard(
+                        scores: [
+                          ScoreboardItem(nickname: 'Will Smith', value: 250),
+                          ScoreboardItem(nickname: 'Will Smith', value: 230),
+                          ScoreboardItem(nickname: 'Will Smith', value: 210),
+                          ScoreboardItem(nickname: 'Will Smith', value: 190),
+                          ScoreboardItem(nickname: 'Will Smith', value: 170),
+                        ],
+                        isDarkMode: _themeCubit.isDarkMode,
+                      );
+                    },
                   ),
                 ],
               ),

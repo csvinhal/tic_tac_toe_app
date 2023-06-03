@@ -15,10 +15,10 @@ class OnboardingNavigationIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
 
-    final activeColor = ticTacToeTheme?.styleColors.blue;
+    final activeColor = ticTacToeTheme?.styleColors?.blue;
     final defaultColor = isDarkMode
-        ? ticTacToeTheme?.neutralColors.lightGrey
-        : ticTacToeTheme?.neutralColors.grey;
+        ? ticTacToeTheme?.neutralColors?.lightGrey
+        : ticTacToeTheme?.neutralColors?.grey;
 
     return Container(
       width: 12.0.w,

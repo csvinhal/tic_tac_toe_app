@@ -4,24 +4,29 @@ import 'package:tic_tac_toe_app/core/core.dart';
 class TicTacToeTheme extends ThemeExtension<TicTacToeTheme> {
   const TicTacToeTheme({
     required this.neutralColors,
-    required this.textColors,
     required this.styleColors,
+    required this.appButtonThemeData,
+    required this.appTypographyThemeData,
   });
 
-  final NeutralColors neutralColors;
-  final TextColors textColors;
-  final StyleColors styleColors;
+  final NeutralColors? neutralColors;
+  final StyleColors? styleColors;
+  final AppButtonThemeData? appButtonThemeData;
+  final AppTypographyThemeData? appTypographyThemeData;
 
   @override
   ThemeExtension<TicTacToeTheme> copyWith({
     NeutralColors? neutralColors,
-    TextColors? textColors,
     StyleColors? styleColors,
+    AppButtonThemeData? appButtonThemeData,
+    AppTypographyThemeData? appTypographyThemeData,
   }) {
     return TicTacToeTheme(
       neutralColors: neutralColors ?? this.neutralColors,
-      textColors: textColors ?? this.textColors,
       styleColors: styleColors ?? this.styleColors,
+      appButtonThemeData: appButtonThemeData ?? this.appButtonThemeData,
+      appTypographyThemeData:
+          appTypographyThemeData ?? this.appTypographyThemeData,
     );
   }
 
@@ -35,9 +40,18 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme> {
     }
 
     return TicTacToeTheme(
-      neutralColors: neutralColors.lerp(other.neutralColors, t),
-      styleColors: styleColors.lerp(other.styleColors, t),
-      textColors: textColors.lerp(other.textColors, t),
+      neutralColors: NeutralColors.lerp(neutralColors, other.neutralColors, t),
+      styleColors: StyleColors.lerp(styleColors, other.styleColors, t),
+      appButtonThemeData: AppButtonThemeData.lerp(
+        appButtonThemeData,
+        other.appButtonThemeData,
+        t,
+      ),
+      appTypographyThemeData: AppTypographyThemeData.lerp(
+        appTypographyThemeData,
+        other.appTypographyThemeData,
+        t,
+      ),
     );
   }
 }

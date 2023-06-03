@@ -28,13 +28,13 @@ extension GameStatusTypeExtension on GameStatusType {
 
     switch (this) {
       case GameStatusType.won:
-        return ticTacToeTheme?.styleColors.green;
+        return ticTacToeTheme?.styleColors?.green;
       case GameStatusType.lost:
-        return ticTacToeTheme?.styleColors.red;
+        return ticTacToeTheme?.styleColors?.red;
       case GameStatusType.draw:
         return isDarkMode
-            ? ticTacToeTheme?.neutralColors.darkGrey
-            : ticTacToeTheme?.neutralColors.grey;
+            ? ticTacToeTheme?.neutralColors?.darkGrey
+            : ticTacToeTheme?.neutralColors?.grey;
     }
   }
 }

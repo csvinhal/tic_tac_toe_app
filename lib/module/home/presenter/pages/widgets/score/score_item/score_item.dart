@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe_app/module/widgets/widgets.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 
 class ScoreItem extends StatelessWidget {
   const ScoreItem({

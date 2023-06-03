@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-class NeutralColors {
+class NeutralColors extends Equatable {
   const NeutralColors({
     required this.white,
     required this.lighterGrey,
@@ -43,19 +44,37 @@ class NeutralColors {
     );
   }
 
-  NeutralColors lerp(
-    NeutralColors? other,
+  static NeutralColors? lerp(
+    NeutralColors? a,
+    NeutralColors? b,
     double t,
   ) {
+    if (identical(a, b)) {
+      return a;
+    }
     return NeutralColors(
-      white: Color.lerp(white, other?.white, t),
-      lighterGrey: Color.lerp(lighterGrey, other?.lighterGrey, t),
-      lightGrey: Color.lerp(lightGrey, other?.lightGrey, t),
-      grey: Color.lerp(grey, other?.grey, t),
-      darkGrey: Color.lerp(darkGrey, other?.darkGrey, t),
-      darkerGrey: Color.lerp(darkerGrey, other?.darkerGrey, t),
-      darkestGrey: Color.lerp(darkestGrey, other?.darkestGrey, t),
-      black: Color.lerp(black, other?.black, t),
+      white: Color.lerp(a?.white, b?.white, t),
+      lighterGrey: Color.lerp(a?.lighterGrey, b?.lighterGrey, t),
+      lightGrey: Color.lerp(a?.lightGrey, b?.lightGrey, t),
+      grey: Color.lerp(a?.grey, b?.grey, t),
+      darkGrey: Color.lerp(a?.darkGrey, b?.darkGrey, t),
+      darkerGrey: Color.lerp(a?.darkerGrey, b?.darkerGrey, t),
+      darkestGrey: Color.lerp(a?.darkestGrey, b?.darkestGrey, t),
+      black: Color.lerp(a?.black, b?.black, t),
     );
+  }
+
+  @override
+  List<Object?> get props {
+    return [
+      white,
+      lighterGrey,
+      lightGrey,
+      grey,
+      darkGrey,
+      darkerGrey,
+      darkestGrey,
+      black,
+    ];
   }
 }

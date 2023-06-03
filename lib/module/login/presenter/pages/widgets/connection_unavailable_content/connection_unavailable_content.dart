@@ -34,8 +34,9 @@ class ConnectionUnavailableContent extends StatelessWidget {
               child: AppButton(
                 AppLocalizations.of(context).loginPreparingPageTryAgain,
                 icon: themeCubit.isDarkMode
-                    ? AppIconsAssets.retryDark
-                    : AppIconsAssets.retry,
+                    ? ImageAssetValue.retryDark
+                    : ImageAssetValue.retry,
+                excludeIconFromSemantics: true,
                 onPressed: onTap,
               ),
             )

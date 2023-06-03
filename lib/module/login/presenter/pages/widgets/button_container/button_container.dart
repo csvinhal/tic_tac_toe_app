@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/presenter/widgets/app_button.dart';
-import 'package:tic_tac_toe_app/module/app_icons_assets.dart';
 
 class ButtonContainer extends StatelessWidget {
   const ButtonContainer({
@@ -25,7 +23,10 @@ class ButtonContainer extends StatelessWidget {
             children: [
               AppButton(
                 AppLocalizations.of(context).loginSignInPageSignInGoogle,
-                icon: AppIconsAssets.google,
+                icon: themeCubit.isDarkMode
+                    ? ImageAssetValue.googleDark
+                    : ImageAssetValue.google,
+                excludeIconFromSemantics: true,
                 onPressed: () {
                   Navigator.of(context).pushReplacementNamed('/login/prepare');
                 },
@@ -33,7 +34,10 @@ class ButtonContainer extends StatelessWidget {
               SizedBox(height: 20.0.h),
               AppButton(
                 AppLocalizations.of(context).loginSignInPageSignInFacebook,
-                icon: AppIconsAssets.facebook,
+                icon: themeCubit.isDarkMode
+                    ? ImageAssetValue.facebookDark
+                    : ImageAssetValue.facebook,
+                excludeIconFromSemantics: true,
                 onPressed: () {
                   Navigator.of(context).pushReplacementNamed('/login/prepare');
                 },

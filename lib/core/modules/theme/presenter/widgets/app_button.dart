@@ -7,13 +7,15 @@ class AppButton extends StatelessWidget {
     this.label, {
     this.onPressed,
     this.appButtonType = AppButtonType.normal,
+    this.excludeIconFromSemantics = false,
     this.icon,
     super.key,
   });
 
-  final String? icon;
+  final ImageAssetValue? icon;
   final AppButtonType? appButtonType;
   final VoidCallback? onPressed;
+  final bool excludeIconFromSemantics;
   final String label;
 
   AppButtonThemeData? themeStyleOf(BuildContext context) {
@@ -57,10 +59,11 @@ class AppButton extends StatelessWidget {
                 ExcludeSemantics(
                   child: Padding(
                     padding: EdgeInsets.only(right: 8.0.w),
-                    child: SizedBox(
+                    child: ImageAssets.icon(
+                      image: icon!,
                       width: 20.0.w,
                       height: 20.0.h,
-                      child: Image.asset(icon!),
+                      excludeFromSemantics: excludeIconFromSemantics,
                     ),
                   ),
                 ),

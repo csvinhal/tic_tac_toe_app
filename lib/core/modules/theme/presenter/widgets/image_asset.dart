@@ -7,6 +7,9 @@ class ImageAssets extends StatelessWidget {
     required this.imageAssetType,
     this.height,
     this.width,
+    this.fit,
+    this.semanticLabel,
+    this.excludeFromSemantics = false,
     super.key,
   });
 
@@ -15,6 +18,9 @@ class ImageAssets extends StatelessWidget {
     this.imageAssetType = ImageAssetType.image,
     this.height,
     this.width,
+    this.fit,
+    this.semanticLabel,
+    this.excludeFromSemantics = false,
     super.key,
   });
 
@@ -23,6 +29,9 @@ class ImageAssets extends StatelessWidget {
     this.imageAssetType = ImageAssetType.icon,
     this.height,
     this.width,
+    this.fit,
+    this.semanticLabel,
+    this.excludeFromSemantics = false,
     super.key,
   });
 
@@ -30,6 +39,9 @@ class ImageAssets extends StatelessWidget {
   final ImageAssetType imageAssetType;
   final double? height;
   final double? width;
+  final BoxFit? fit;
+  final String? semanticLabel;
+  final bool excludeFromSemantics;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +49,9 @@ class ImageAssets extends StatelessWidget {
       assetName,
       width: width,
       height: height,
+      fit: fit,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
     );
   }
 

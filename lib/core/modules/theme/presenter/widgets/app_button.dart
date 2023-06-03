@@ -33,6 +33,7 @@ class AppButton extends StatelessWidget {
     final borderRadius = BorderRadius.circular(4.0.r);
     final backgroundColor = _getBackgroundColor(themeData);
     final borderColor = _getBorderColor(themeData);
+    final textColor = _getTextColor(themeData);
 
     return Material(
       color: backgroundColor,
@@ -65,7 +66,7 @@ class AppButton extends StatelessWidget {
                 ),
               AppTypography(
                 label,
-                // color: textColor,
+                color: textColor,
               )
             ],
           ),
@@ -106,5 +107,20 @@ class AppButton extends StatelessWidget {
     }
 
     return themeData.disabledButtonColor;
+  }
+
+  Color? _getTextColor(AppButtonThemeData themeData) {
+    if (enabled) {
+      switch (appButtonType) {
+        case AppButtonType.normal:
+          return themeData.normalTextColor;
+        case AppButtonType.accent:
+        case AppButtonType.primary:
+        case null:
+          return themeData.defaultTextColor;
+      }
+    }
+
+    return themeData.disabledTextColor;
   }
 }

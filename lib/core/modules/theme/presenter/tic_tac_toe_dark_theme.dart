@@ -27,6 +27,8 @@ TicTacToeTheme darkTicTacToeTheme = const TicTacToeTheme(
     accentColor: AppDarkStaticColor.red,
     primaryColor: AppDarkStaticColor.blue,
     normalBorderColor: AppDarkStaticColor.darkBlue,
+    normalTextColor: AppLightStaticColor.lightGrey,
+    defaultTextColor: AppLightStaticColor.lightGrey,
   ),
   appTypographyThemeData: AppTypographyThemeData(
     primaryColor: AppLightStaticColor.lightGrey,

@@ -19,6 +19,8 @@ class AppButtonThemeData extends Equatable with Diagnosticable {
     required this.accentColor,
     required this.normalColor,
     required this.normalBorderColor,
+    required this.normalTextColor,
+    required this.defaultTextColor,
   });
 
   factory AppButtonThemeData.fallback() => const AppButtonThemeData(
@@ -28,6 +30,8 @@ class AppButtonThemeData extends Equatable with Diagnosticable {
         accentColor: AppLightStaticColor.red,
         primaryColor: AppLightStaticColor.blue,
         normalBorderColor: AppLightStaticColor.lightGrey,
+        normalTextColor: AppLightStaticColor.black,
+        defaultTextColor: AppLightStaticColor.white,
       );
 
   final Color? disabledButtonColor;
@@ -36,6 +40,8 @@ class AppButtonThemeData extends Equatable with Diagnosticable {
   final Color? accentColor;
   final Color? normalColor;
   final Color? normalBorderColor;
+  final Color? normalTextColor;
+  final Color? defaultTextColor;
 
   static AppButtonThemeData? lerp(
     AppButtonThemeData? a,
@@ -55,6 +61,8 @@ class AppButtonThemeData extends Equatable with Diagnosticable {
       normalColor: Color.lerp(a?.normalColor, b?.normalColor, t),
       normalBorderColor:
           Color.lerp(a?.normalBorderColor, b?.normalBorderColor, t),
+      normalTextColor: Color.lerp(a?.normalTextColor, b?.normalTextColor, t),
+      defaultTextColor: Color.lerp(a?.defaultTextColor, b?.defaultTextColor, t),
     );
   }
 

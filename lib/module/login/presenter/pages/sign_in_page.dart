@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/button_container/button_container.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/login_logo.dart';
+import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/widgets.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/domain/entities/app_text_theme.dart';
-import 'package:tic_tac_toe_app/core/modules/theme/presenter/tic_tac_toe_dark_theme.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 
 final appDarkTheme = ThemeData.dark().copyWith(
-  scaffoldBackgroundColor: darkTicTacToeTheme.styleColors?.dark,
+  scaffoldBackgroundColor: AppDarkStaticColor.dark,
   cardTheme: const CardTheme().copyWith(
     elevation: 0,
     color: darkTicTacToeTheme.styleColors?.darkBlue,

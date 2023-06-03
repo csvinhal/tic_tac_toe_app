@@ -35,7 +35,8 @@ class AppButton extends StatelessWidget {
     final borderColor = _getBorderColor(themeData);
 
     return Material(
-    color: backgroundColor,
+      color: backgroundColor,
+      clipBehavior: Clip.antiAlias,
       borderRadius: borderRadius,
       child: InkWell(
         onTap: onPressed,
@@ -46,7 +47,6 @@ class AppButton extends StatelessWidget {
               color: borderColor!,
               width: 1.0.w,
             ),
-            borderRadius: borderRadius,
           ),
           padding: EdgeInsets.symmetric(vertical: 16.0.h),
           child: Row(

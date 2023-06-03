@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 
 TicTacToeTheme lightTicTacToeTheme = const TicTacToeTheme(
@@ -20,7 +21,7 @@ TicTacToeTheme lightTicTacToeTheme = const TicTacToeTheme(
   appButtonThemeData: AppButtonThemeData(
     disabledButtonColor: AppLightStaticColor.lightGrey,
     disabledTextColor: AppLightStaticColor.grey,
-    normalColor: AppLightStaticColor.white,
+    normalColor: Colors.transparent,
     accentColor: AppLightStaticColor.red,
     primaryColor: AppLightStaticColor.blue,
     normalBorderColor: AppLightStaticColor.lightGrey,

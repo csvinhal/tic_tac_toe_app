@@ -7,12 +7,14 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme> {
     required this.styleColors,
     required this.appButtonThemeData,
     required this.appTypographyThemeData,
+    required this.loadingProgressBarThemeData,
   });
 
   final NeutralColors? neutralColors;
   final StyleColors? styleColors;
   final AppButtonThemeData? appButtonThemeData;
   final AppTypographyThemeData? appTypographyThemeData;
+  final LoadingProgressBarThemeData? loadingProgressBarThemeData;
 
   @override
   ThemeExtension<TicTacToeTheme> copyWith({
@@ -20,6 +22,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme> {
     StyleColors? styleColors,
     AppButtonThemeData? appButtonThemeData,
     AppTypographyThemeData? appTypographyThemeData,
+    LoadingProgressBarThemeData? loadingProgressBarThemeData,
   }) {
     return TicTacToeTheme(
       neutralColors: neutralColors ?? this.neutralColors,
@@ -27,6 +30,8 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme> {
       appButtonThemeData: appButtonThemeData ?? this.appButtonThemeData,
       appTypographyThemeData:
           appTypographyThemeData ?? this.appTypographyThemeData,
+      loadingProgressBarThemeData:
+          loadingProgressBarThemeData ?? this.loadingProgressBarThemeData,
     );
   }
 
@@ -50,6 +55,11 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme> {
       appTypographyThemeData: AppTypographyThemeData.lerp(
         appTypographyThemeData,
         other.appTypographyThemeData,
+        t,
+      ),
+      loadingProgressBarThemeData: LoadingProgressBarThemeData.lerp(
+        loadingProgressBarThemeData,
+        other.loadingProgressBarThemeData,
         t,
       ),
     );

@@ -54,7 +54,7 @@ class AppTypographyTheme extends InheritedTheme {
   }
 
   @override
-  bool updateShouldNotify(covariant AppButtonTheme oldWidget) =>
+  bool updateShouldNotify(covariant AppTypographyTheme oldWidget) =>
       data != oldWidget.data;
 
   @override

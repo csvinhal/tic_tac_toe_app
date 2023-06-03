@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/loading_progress/loading_progress_bar.dart';
 
 class LoadingProgress extends StatelessWidget {
   const LoadingProgress({
@@ -22,7 +21,7 @@ class LoadingProgress extends StatelessWidget {
       children: [
         AppTypography(text),
         SizedBox(height: 12.0.h),
-        LoadingProgressBar(progress: progress, darkMode: darkMode),
+        LoadingProgressBar(progress: progress),
       ],
     );
   }

@@ -34,4 +34,8 @@ TicTacToeTheme darkTicTacToeTheme = const TicTacToeTheme(
     primaryColor: AppLightStaticColor.lightGrey,
     secondaryColor: AppLightStaticColor.darkGrey,
   ),
+  loadingProgressBarThemeData: LoadingProgressBarThemeData(
+    backgroundColor: AppLightStaticColor.lightGrey,
+    progressColor: AppLightStaticColor.blue,
+  ),
 );

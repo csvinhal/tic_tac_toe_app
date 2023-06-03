@@ -5,12 +5,10 @@ import 'package:tic_tac_toe_app/core/core.dart';
 class LoadingProgressBar extends StatefulWidget {
   const LoadingProgressBar({
     required this.progress,
-    required this.darkMode,
     super.key,
   });
 
   final double progress;
-  final bool darkMode;
 
   @override
   State<LoadingProgressBar> createState() => _LoadingProgressBarState();
@@ -61,50 +59,51 @@ class _LoadingProgressBarState extends State<LoadingProgressBar>
     super.dispose();
   }
 
+  LoadingProgressBarThemeData? themeStyleOf(BuildContext context) {
+    return LoadingProgressBarTheme.of(context);
+  }
+
+  LoadingProgressBarThemeData defaultStyleOf() {
+    return LoadingProgressBarThemeData.fallback();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final ticTacToeTheme = Theme.of(context).extension<TicTacToeTheme>();
+    final themeStyle = themeStyleOf(context);
+    final defaultStyle = defaultStyleOf();
+    final themeData = themeStyle ?? defaultStyle;
 
-    final backgroundColor = _darkMode
-        ? ticTacToeTheme?.neutralColors?.grey
-        : ticTacToeTheme?.neutralColors?.lightGrey;
-    final progressColor =
-        ticTacToeTheme?.styleColors?.blue ?? const Color(0xFF46A3FF);
+    final backgroundColor = themeData.backgroundColor;
+    final progressColor = themeData.progressColor;
 
     return Material(
       color: Colors.transparent,
-      child: ColoredBox(
-        color: Colors.transparent,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: SizedBox(
-                width: double.infinity,
-                height: 6.0.h,
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    CustomPaint(
-                      painter: _LinearBarPainter(
-                        backgroundColor:
-                            backgroundColor ?? const Color(0xFFADADAD),
-                        progressColor: progressColor,
-                        progress: _percent,
-                      ),
-                      child: Container(),
-                    )
-                  ],
-                ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: SizedBox(
+              width: double.infinity,
+              height: 6.0.h,
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  CustomPaint(
+                    painter: _LinearBarPainter(
+                      backgroundColor: backgroundColor!,
+                      progressColor: progressColor!,
+                      progress: _percent,
+                    ),
+                    child: Container(),
+                  )
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
-
-  bool get _darkMode => widget.darkMode;
 
   double get _progress => widget.progress;
 }

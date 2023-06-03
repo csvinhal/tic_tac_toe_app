@@ -34,7 +34,8 @@ class AppIconsAssets {
   static const peopleDark = '$_path/people_dark.png';
   static const peopleDarkSelected = '$_path/people_dark_selected.png';
 
-
+  static const star = '$_path/star.png';
+  static const starDark = '$_path/star_dark.png';
 
   static const _path = 'assets/icons';
 }

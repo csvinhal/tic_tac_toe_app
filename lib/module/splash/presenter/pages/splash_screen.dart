@@ -45,8 +45,8 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 180.0.h,
               child: Image.asset(
                 _themeCubit.isDarkMode
-                    ? AppImagessAssets.logo
-                    : AppImagessAssets.logoDark,
+                    ? AppImagesAssets.logo
+                    : AppImagesAssets.logoDark,
               ),
             ),
           ),

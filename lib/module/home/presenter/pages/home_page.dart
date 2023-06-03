@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 50.h),
+                  SizedBox(height: 40.h),
                   const Center(
                     child: AppTypography(
                       'Welcome',
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                       type: AppTypographyType.header1,
                     ),
                   ),
-                  SizedBox(height: 36.h),
+                  SizedBox(height: 16.h),
                   BlocBuilder<ThemeCubit, ThemeMode>(
                     bloc: _themeCubit,
                     builder: (context, state) {
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  SizedBox(height: 72.h),
+                  SizedBox(height: 16.h),
                   AppTypography(
                     AppLocalizations.of(context).homeHomePageGameHistoryTitle,
                     type: AppTypographyType.subtitle1,
@@ -96,6 +96,21 @@ class _HomePageState extends State<HomePage> {
                         isDarkMode: _themeCubit.isDarkMode,
                       );
                     },
+                  ),
+                  SizedBox(height: 24.h),
+                  AppTypography(
+                    'Scoreboard',
+                    type: AppTypographyType.subtitle1,
+                  ),
+                  SizedBox(height: 12.h),
+                  Scoreboard(
+                    scores: [
+                      ScoreboardItem(nickname: 'Will Smith', value: 250),
+                      ScoreboardItem(nickname: 'Will Smith', value: 230),
+                      ScoreboardItem(nickname: 'Will Smith', value: 210),
+                      ScoreboardItem(nickname: 'Will Smith', value: 190),
+                      ScoreboardItem(nickname: 'Will Smith', value: 170),
+                    ],
                   ),
                 ],
               ),

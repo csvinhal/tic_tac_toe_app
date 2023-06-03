@@ -23,8 +23,8 @@ class LoginLogo extends StatelessWidget {
           width: 124.0.w,
           child: Image.asset(
             themeCubit.isDarkMode
-                ? AppImagessAssets.logo
-                : AppImagessAssets.logoDark,
+                ? AppImagesAssets.logo
+                : AppImagesAssets.logoDark,
           ),
         );
       },

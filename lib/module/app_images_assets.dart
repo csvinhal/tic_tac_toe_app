@@ -1,5 +1,5 @@
-class AppImagessAssets {
-  AppImagessAssets._();
+class AppImagesAssets {
+  AppImagesAssets._();
 
   static const logo = '$_path/logo.png';
   static const logoDark = '$_path/logo_dark.png';

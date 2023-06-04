@@ -4,10 +4,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/home/domain/domain.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/pages/widgets/widgets.dart';
+import 'package:tic_tac_toe_app/module/home/presenter/views/widgets/widgets.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({
+class HomeView extends StatefulWidget {
+  const HomeView({
     required this.themeCubit,
     super.key,
   });
@@ -15,10 +15,10 @@ class HomePage extends StatefulWidget {
   final ThemeCubit themeCubit;
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

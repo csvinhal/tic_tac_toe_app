@@ -6,13 +6,11 @@ class LoadingProgress extends StatelessWidget {
   const LoadingProgress({
     required this.text,
     required this.progress,
-    required this.darkMode,
     super.key,
   });
 
   final String text;
   final double progress;
-  final bool darkMode;
 
   @override
   Widget build(BuildContext context) {

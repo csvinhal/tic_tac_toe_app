@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/cubit/preparing_cubit.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/pages/preparing_page.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/pages/sign_in_page.dart';
+import 'package:tic_tac_toe_app/module/login/presenter/cubit/cubit.dart';
+import 'package:tic_tac_toe_app/module/login/presenter/views/views.dart';
 
 class LoginModule extends Module {
   @override
@@ -13,13 +12,13 @@ class LoginModule extends Module {
   final List<ModularRoute> routes = [
     ChildRoute<dynamic>(
       '/',
-      child: (_, __) => SignInPage(
+      child: (_, __) => SignInView(
         themeCubit: Modular.get(),
       ),
     ),
     ChildRoute<dynamic>(
       '/prepare',
-      child: (_, __) => PreparingPage(
+      child: (_, __) => PreparingView(
         preparingCubit: Modular.get(),
         themeCubit: Modular.get(),
       ),

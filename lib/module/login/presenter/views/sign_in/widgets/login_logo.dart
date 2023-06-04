@@ -14,7 +14,6 @@ class LoginLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeCubit, ThemeMode>(
-      buildWhen: (previous, current) => previous != current,
       bloc: themeCubit,
       builder: (context, state) {
         return ImageAssets.image(

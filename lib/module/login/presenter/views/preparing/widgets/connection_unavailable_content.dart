@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
-import 'package:tic_tac_toe_app/module/app_icons_assets.dart';
 
 class ConnectionUnavailableContent extends StatelessWidget {
   const ConnectionUnavailableContent({

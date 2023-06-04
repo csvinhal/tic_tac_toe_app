@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/module/home/domain/domain.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/pages/widgets/scoreboard/scoreboard_container.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/pages/widgets/scoreboard/scoreboard_list.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/pages/widgets/scoreboard/storeboard_empty_state.dart';
+import 'package:tic_tac_toe_app/module/home/presenter/views/widgets/scoreboard/scoreboard_container.dart';
+import 'package:tic_tac_toe_app/module/home/presenter/views/widgets/scoreboard/scoreboard_list.dart';
+import 'package:tic_tac_toe_app/module/home/presenter/views/widgets/scoreboard/storeboard_empty_state.dart';
 
 class Scoreboard extends StatelessWidget {
   const Scoreboard({

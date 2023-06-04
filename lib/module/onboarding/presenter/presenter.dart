@@ -1,3 +1,3 @@
 export 'cubit/cubit.dart';
-export 'pages/onboarding_page.dart';
-export 'pages/widgets/widgets.dart';
+export 'views/onboarding_view.dart';
+export 'views/widgets/widgets.dart';

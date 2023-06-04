@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/app_images_assets.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({
+class SplashView extends StatefulWidget {
+  const SplashView({
     required this.onboardingCubit,
     required this.themeCubit,
     super.key,
@@ -15,10 +15,10 @@ class SplashScreen extends StatefulWidget {
   final ThemeCubit themeCubit;
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();

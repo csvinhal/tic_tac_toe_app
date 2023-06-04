@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/onboarding/presenter/cubit/cubit.dart';
-import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/widgets.dart';
+import 'package:tic_tac_toe_app/module/onboarding/presenter/views/widgets/widgets.dart';
 
-class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({
+class OnboardingView extends StatefulWidget {
+  const OnboardingView({
     required this.onboardingCubit,
     required this.onboardCubit,
     super.key,
@@ -14,10 +14,10 @@ class OnboardingPage extends StatefulWidget {
   final OnboardCubit onboardCubit;
 
   @override
-  State<OnboardingPage> createState() => _OnboardingPageState();
+  State<OnboardingView> createState() => _OnboardingViewState();
 }
 
-class _OnboardingPageState extends State<OnboardingPage> {
+class _OnboardingViewState extends State<OnboardingView> {
   late PageController _pageController;
 
   @override

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/cubit/preparing_cubit.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/cubit/preparing_state.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/connection_in_progress_content/connection_in_progress_content.dart';
-import 'package:tic_tac_toe_app/module/login/presenter/pages/widgets/connection_unavailable_content/connection_unavailable_content.dart';
+import 'package:tic_tac_toe_app/module/login/presenter/cubit/cubit.dart';
+import 'package:tic_tac_toe_app/module/login/presenter/views/preparing/preparing.dart';
 
-class PreparingPage extends StatefulWidget {
-  const PreparingPage({
+class PreparingView extends StatefulWidget {
+  const PreparingView({
     required this.preparingCubit,
     required this.themeCubit,
     super.key,
@@ -17,10 +15,10 @@ class PreparingPage extends StatefulWidget {
   final ThemeCubit themeCubit;
 
   @override
-  State<PreparingPage> createState() => _PreparingPageState();
+  State<PreparingView> createState() => _PreparingViewState();
 }
 
-class _PreparingPageState extends State<PreparingPage> {
+class _PreparingViewState extends State<PreparingView> {
   @override
   void initState() {
     super.initState();
@@ -54,7 +52,6 @@ class _PreparingPageState extends State<PreparingPage> {
               return ConnectionInProgress(
                 text: state.step.text(context),
                 progress: state.step.progress,
-                themeCubit: _themeCubit,
               );
             },
           ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/pages/widgets/score/score_border/score_border.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/pages/widgets/score/score_item/score_item.dart';
+import 'package:tic_tac_toe_app/module/home/presenter/views/widgets/score/score_border/score_border.dart';
+import 'package:tic_tac_toe_app/module/home/presenter/views/widgets/score/score_item/score_item.dart';
 
 class Score extends StatelessWidget {
   const Score({

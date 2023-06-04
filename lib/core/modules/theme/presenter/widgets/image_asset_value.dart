@@ -15,6 +15,7 @@ enum ImageAssetValue {
   homeSelected,
   homeDark,
   homeDarkSelected,
+  idea,
   logo,
   logoDark,
   logoBlack,
@@ -24,10 +25,12 @@ enum ImageAssetValue {
   searchDark,
   star,
   starDark,
+  swords,
   people,
   peopleDark,
   peopleDarkSelected,
   peopleSelected,
+  winner,
 }
 
 const _kSplitCamelCaseRegex = '(?<=[a-z])[A-Z]';

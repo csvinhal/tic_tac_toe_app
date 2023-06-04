@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/onboarding/presenter/cubit/cubit.dart';
 import 'package:tic_tac_toe_app/module/onboarding/presenter/pages/widgets/widgets.dart';
@@ -38,46 +37,24 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return Scaffold(
       body: SafeArea(
         child: PageView.builder(
-          itemCount: _onboardingCubit.onboarding.length,
+          itemCount: _onboardingCubit.onboardingItems(context).length,
           controller: _pageController,
           pageSnapping: false,
           physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (_, index) => Onboarding(
-            path: _onboardingCubit.onboarding[index].path,
-            title: _onboardingCubit.onboarding[index].title,
-            description: _onboardingCubit.onboarding[index].description,
-            isDarkMode: false,
-          ),
+          itemBuilder: (_, index) {
+            final onboarding = _onboardingCubit.onboardingItems(context)[index];
+            return Onboarding(
+              image: onboarding.image,
+              title: onboarding.title,
+              description: onboarding.description,
+            );
+          },
         ),
       ),
-      bottomNavigationBar: BlocBuilder<OnboardingCubit, int>(
-        bloc: _onboardingCubit,
-        buildWhen: (previous, current) => previous != current,
-        builder: (context, state) {
-          return OnboardingNavigation(
-            isDarkMode: false,
-            currentStep: _onboardingCubit.state,
-            onPrevious: () {
-              _onboardingCubit.onPageDecrement();
-              _pageController.previousPage(
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeIn,
-              );
-            },
-            onNext: () {
-              if (_pageController.page == 2) {
-                _onboardCubit.updateOnboardViewedState();
-                Navigator.of(context).pushReplacementNamed('/login');
-                return;
-              }
-              _onboardingCubit.onPageIncrement();
-              _pageController.nextPage(
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeIn,
-              );
-            },
-          );
-        },
+      bottomNavigationBar: OnboardingBottomNavigationBar(
+        onboardCubit: _onboardCubit,
+        onboardingCubit: _onboardingCubit,
+        pageController: _pageController,
       ),
     );
   }

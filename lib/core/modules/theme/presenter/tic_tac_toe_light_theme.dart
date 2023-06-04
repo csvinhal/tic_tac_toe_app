@@ -36,4 +36,8 @@ TicTacToeTheme lightTicTacToeTheme = const TicTacToeTheme(
     backgroundColor: AppLightStaticColor.lightGrey,
     progressColor: AppLightStaticColor.blue,
   ),
+  onboardingThemeData: OnboardingThemeData(
+    activeIndicatorColor: AppLightStaticColor.blue,
+    defaultIndicatorColor: AppLightStaticColor.grey,
+  ),
 );

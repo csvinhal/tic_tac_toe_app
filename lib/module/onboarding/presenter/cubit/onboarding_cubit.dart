@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/onboarding/domain/entity/onboarding_data.dart';
 
 class OnboardingCubit extends Cubit<int> {
@@ -12,23 +15,26 @@ class OnboardingCubit extends Cubit<int> {
     emit(state + 1);
   }
 
-  List<OnboardingData> get onboarding => const [
-        OnboardingData(
-          path: 'assets/images/idea.png',
-          title: 'Welcome',
-          description: 'Most fun game now available on your smartphone device!',
-        ),
-        OnboardingData(
-          path: 'assets/images/swords.png',
-          title: 'Complete',
-          description: 'Play online with your friends and top the leaderboard!',
-        ),
-        OnboardingData(
-          path: 'assets/images/winner.png',
-          title: 'Scoreboard',
-          description:
-              // ignore: lines_longer_than_80_chars
-              'Earn points for each game and make your way to top the scoreboard!',
-        )
-      ];
+  List<OnboardingData> onboardingItems(BuildContext context) {
+    return [
+      OnboardingData(
+        image: ImageAssetValue.idea,
+        title: AppLocalizations.of(context).onboardingOnboardingPageIdeaTitle,
+        description: AppLocalizations.of(context)
+            .onboardingOnboardingPageIdeaDescription,
+      ),
+      OnboardingData(
+        image: ImageAssetValue.swords,
+        title: AppLocalizations.of(context).onboardingOnboardingPageSwordsTitle,
+        description: AppLocalizations.of(context)
+            .onboardingOnboardingPageSwordsDescription,
+      ),
+      OnboardingData(
+        image: ImageAssetValue.winner,
+        title: AppLocalizations.of(context).onboardingOnboardingPageWinnerTitle,
+        description: AppLocalizations.of(context)
+            .onboardingOnboardingPageWinnerDescription,
+      )
+    ];
+  }
 }

@@ -10,6 +10,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     required this.appButtonThemeData,
     required this.appTypographyThemeData,
     required this.loadingProgressBarThemeData,
+    required this.onboardingThemeData,
   });
 
   final NeutralColors? neutralColors;
@@ -17,6 +18,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
   final AppButtonThemeData? appButtonThemeData;
   final AppTypographyThemeData? appTypographyThemeData;
   final LoadingProgressBarThemeData? loadingProgressBarThemeData;
+  final OnboardingThemeData? onboardingThemeData;
 
   @override
   ThemeExtension<TicTacToeTheme> copyWith({
@@ -25,6 +27,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     AppButtonThemeData? appButtonThemeData,
     AppTypographyThemeData? appTypographyThemeData,
     LoadingProgressBarThemeData? loadingProgressBarThemeData,
+    OnboardingThemeData? onboardingThemeData,
   }) {
     return TicTacToeTheme(
       neutralColors: neutralColors ?? this.neutralColors,
@@ -34,6 +37,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
           appTypographyThemeData ?? this.appTypographyThemeData,
       loadingProgressBarThemeData:
           loadingProgressBarThemeData ?? this.loadingProgressBarThemeData,
+      onboardingThemeData: onboardingThemeData ?? this.onboardingThemeData,
     );
   }
 
@@ -64,6 +68,11 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
         other.loadingProgressBarThemeData,
         t,
       ),
+      onboardingThemeData: OnboardingThemeData.lerp(
+        onboardingThemeData,
+        other.onboardingThemeData,
+        t,
+      ),
     );
   }
 
@@ -84,22 +93,32 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
           styleColors,
           defaultValue: null,
         ),
-      )..add(
+      )
+      ..add(
         DiagnosticsProperty<AppButtonThemeData?>(
           'appButtonThemeData',
           appButtonThemeData,
           defaultValue: null,
         ),
-      )..add(
+      )
+      ..add(
         DiagnosticsProperty<AppTypographyThemeData?>(
           'appTypographyThemeData',
           appTypographyThemeData,
           defaultValue: null,
         ),
-      )..add(
+      )
+      ..add(
         DiagnosticsProperty<LoadingProgressBarThemeData?>(
           'loadingProgressBarThemeData',
           loadingProgressBarThemeData,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<OnboardingThemeData?>(
+          'onboardingThemeData',
+          onboardingThemeData,
           defaultValue: null,
         ),
       );

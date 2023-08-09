@@ -28,5 +28,8 @@
   "homeHomePageGameHistoryEmptyDescription": "Jogue um jogo",
   "homeHomePageGameHistoryGameStatusWon": "Vitória",
   "homeHomePageGameHistoryGameStatusLost": "Derrota",
-  "homeHomePageGameHistoryGameStatusDraw": "Empate"
+  "homeHomePageGameHistoryGameStatusDraw": "Empate",
+  "homeHomePageScoreboardTitle": "Placar",
+  "homeHomePageScoreboardEmpty": "Vazio",
+  "homeHomePageScoreboardEmptyDescription": "Comece a jogar pessoal."
 }

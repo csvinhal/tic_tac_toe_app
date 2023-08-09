@@ -11,6 +11,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     required this.appTypographyThemeData,
     required this.loadingProgressBarThemeData,
     required this.onboardingThemeData,
+    required this.scoreThemeData,
   });
 
   final NeutralColors? neutralColors;
@@ -19,6 +20,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
   final AppTypographyThemeData? appTypographyThemeData;
   final LoadingProgressBarThemeData? loadingProgressBarThemeData;
   final OnboardingThemeData? onboardingThemeData;
+  final ScoreThemeData? scoreThemeData;
 
   @override
   ThemeExtension<TicTacToeTheme> copyWith({
@@ -28,6 +30,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     AppTypographyThemeData? appTypographyThemeData,
     LoadingProgressBarThemeData? loadingProgressBarThemeData,
     OnboardingThemeData? onboardingThemeData,
+    ScoreThemeData? scoreThemeData,
   }) {
     return TicTacToeTheme(
       neutralColors: neutralColors ?? this.neutralColors,
@@ -38,6 +41,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
       loadingProgressBarThemeData:
           loadingProgressBarThemeData ?? this.loadingProgressBarThemeData,
       onboardingThemeData: onboardingThemeData ?? this.onboardingThemeData,
+      scoreThemeData: scoreThemeData ?? this.scoreThemeData,
     );
   }
 
@@ -71,6 +75,11 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
       onboardingThemeData: OnboardingThemeData.lerp(
         onboardingThemeData,
         other.onboardingThemeData,
+        t,
+      ),
+      scoreThemeData: ScoreThemeData.lerp(
+        scoreThemeData,
+        other.scoreThemeData,
         t,
       ),
     );
@@ -119,6 +128,13 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
         DiagnosticsProperty<OnboardingThemeData?>(
           'onboardingThemeData',
           onboardingThemeData,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<ScoreThemeData?>(
+          'scoreThemeData',
+          scoreThemeData,
           defaultValue: null,
         ),
       );

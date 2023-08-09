@@ -10,3 +10,6 @@ export 'loading_progress_bar_theme.dart';
 export 'onboarding.dart';
 export 'onboarding_navigation.dart';
 export 'onboarding_theme.dart';
+export 'score.dart';
+export 'score_item.dart';
+export 'score_theme.dart';

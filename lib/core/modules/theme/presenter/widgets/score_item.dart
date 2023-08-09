@@ -13,13 +13,11 @@ class ScoreItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          AppTypography(value, type: AppTypographyType.header1),
-          AppTypography.secondary(label),
-        ],
-      ),
+    return Column(
+      children: [
+        AppTypography(value, type: AppTypographyType.header1),
+        AppTypography.secondary(label),
+      ],
     );
   }
 }

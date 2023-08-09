@@ -44,16 +44,29 @@ class _HomeViewState extends State<HomeView> {
                     ),
                   ),
                   SizedBox(height: 16.h),
-                  BlocBuilder<ThemeCubit, ThemeMode>(
-                    bloc: _themeCubit,
-                    builder: (context, state) {
-                      return Score(
-                        wins: '0',
-                        losses: '0',
-                        draws: '0',
-                        isDarkMode: _themeCubit.isDarkMode,
-                      );
-                    },
+                  SizedBox(
+                    height: 94.h,
+                    child: Center(
+                      child: Score(
+                        children: [
+                          ScoreItem(
+                            label: AppLocalizations.of(context)
+                                .homeHomePageScoreWins,
+                            value: '0',
+                          ),
+                          ScoreItem(
+                            label: AppLocalizations.of(context)
+                                .homeHomePageScoreLosses,
+                            value: '0',
+                          ),
+                          ScoreItem(
+                            label: AppLocalizations.of(context)
+                                .homeHomePageScoreDraws,
+                            value: '0',
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(height: 16.h),
                   AppTypography(
@@ -98,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   SizedBox(height: 24.h),
                   AppTypography(
-                    'Scoreboard',
+                    AppLocalizations.of(context).homeHomePageScoreboardTitle,
                     type: AppTypographyType.subtitle1,
                   ),
                   SizedBox(height: 12.h),
@@ -106,7 +119,7 @@ class _HomeViewState extends State<HomeView> {
                     bloc: _themeCubit,
                     builder: (context, state) {
                       return Scoreboard(
-                        scores: [
+                        scores: const [
                           ScoreboardItem(nickname: 'Will Smith', value: 250),
                           ScoreboardItem(nickname: 'Will Smith', value: 230),
                           ScoreboardItem(nickname: 'Will Smith', value: 210),

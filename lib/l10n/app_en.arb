@@ -27,5 +27,8 @@
   "homeHomePageGameHistoryEmptyDescription": "Play some game",
   "homeHomePageGameHistoryGameStatusWon": "Won",
   "homeHomePageGameHistoryGameStatusLost": "Lost",
-  "homeHomePageGameHistoryGameStatusDraw": "Draw"
+  "homeHomePageGameHistoryGameStatusDraw": "Draw",
+  "homeHomePageScoreboardTitle": "Scoreboard",
+  "homeHomePageScoreboardEmpty": "Empty",
+  "homeHomePageScoreboardEmptyDescription": "Start playing folks."
 }

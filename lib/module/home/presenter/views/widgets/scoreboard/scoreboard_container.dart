@@ -12,13 +12,10 @@ class ScoreboardContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: minHeight),
-      child: Card(
-        elevation: 0,
-        margin: EdgeInsets.zero,
-        child: child,
-      ),
+    return Card(
+      elevation: 0,
+      margin: EdgeInsets.zero,
+      child: child,
     );
   }
 }

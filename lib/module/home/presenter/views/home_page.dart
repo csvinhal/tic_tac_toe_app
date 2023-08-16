@@ -28,9 +28,9 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 40.h),
-            const Center(
+            Center(
               child: AppTypography(
-                'Welcome',
+                AppLocalizations.of(context).homeHomePageWelcome,
                 type: AppTypographyType.subtitle1,
               ),
             ),
@@ -47,18 +47,17 @@ class _HomePageState extends State<HomePage> {
                 child: Score(
                   children: [
                     ScoreItem(
-                      label: AppLocalizations.of(context)
-                          .homeHomePageScoreWins,
+                      label: AppLocalizations.of(context).homeHomePageScoreWins,
                       value: '0',
                     ),
                     ScoreItem(
-                      label: AppLocalizations.of(context)
-                          .homeHomePageScoreLosses,
+                      label:
+                          AppLocalizations.of(context).homeHomePageScoreLosses,
                       value: '0',
                     ),
                     ScoreItem(
-                      label: AppLocalizations.of(context)
-                          .homeHomePageScoreDraws,
+                      label:
+                          AppLocalizations.of(context).homeHomePageScoreDraws,
                       value: '0',
                     ),
                   ],

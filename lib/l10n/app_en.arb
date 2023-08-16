@@ -19,6 +19,7 @@
   "loginPreparingPageDone": "Done",
   "loginPreparingPageConnectionUnavailable": "Internet Connection Unavailable",
   "loginPreparingPageTryAgain": "Try Again",
+  "homeHomePageWelcome": "Welcome",
   "homeHomePageScoreWins": "Wins",
   "homeHomePageScoreLosses": "Losses",
   "homeHomePageScoreDraws": "Draws",
@@ -30,5 +31,6 @@
   "homeHomePageGameHistoryGameStatusDraw": "Draw",
   "homeHomePageScoreboardTitle": "Scoreboard",
   "homeHomePageScoreboardEmpty": "Empty",
-  "homeHomePageScoreboardEmptyDescription": "Start playing folks."
+  "homeHomePageScoreboardEmptyDescription": "Start playing folks.",
+  "homeFriendsPageTopBar": "Friends"
 }

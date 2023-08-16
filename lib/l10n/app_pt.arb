@@ -19,6 +19,7 @@
   "loginPreparingPageDone": "Finalizado",
   "loginPreparingPageConnectionUnavailable": "Conexão com a Internet indisponível",
   "loginPreparingPageTryAgain": "Tentar Novamente",
+  "homeHomePageWelcome": "Bem vindo",
   "homeHomePageScoreWins": "Vitórias",
   "homeHomePageScoreLosses": "Derrotas",
   "homeHomePageScoreDraws": "Empates",
@@ -31,5 +32,6 @@
   "homeHomePageGameHistoryGameStatusDraw": "Empate",
   "homeHomePageScoreboardTitle": "Placar",
   "homeHomePageScoreboardEmpty": "Vazio",
-  "homeHomePageScoreboardEmptyDescription": "Comece a jogar pessoal."
+  "homeHomePageScoreboardEmptyDescription": "Comece a jogar pessoal.",
+  "homeFriendsPageTopBar": "Amigos"
 }

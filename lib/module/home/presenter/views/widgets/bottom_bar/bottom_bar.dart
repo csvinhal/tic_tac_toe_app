@@ -6,35 +6,42 @@ class BottomBar extends StatelessWidget {
   const BottomBar({
     required this.currentIndex,
     required this.isDarkMode,
+    required this.onSelectItem,
     super.key,
   });
 
   final int currentIndex;
   final bool isDarkMode;
+  final void Function(int)? onSelectItem;
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(12.r),
-      child: SizedBox(
-        height: 64.h,
-        child: BottomNavigationBar(
-          iconSize: 24.w,
-          selectedFontSize: 0,
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset(homeIcon),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(gamesIcon),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(peopleIcon),
-              label: '',
-            ),
-          ],
+    return Padding(
+      padding: EdgeInsets.all(24.w),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12.r),
+        child: SizedBox(
+          height: 64.h,
+          child: BottomNavigationBar(
+            iconSize: 24.w,
+            selectedFontSize: 0,
+            currentIndex: currentIndex,
+            onTap: onSelectItem,
+            items: [
+              BottomNavigationBarItem(
+                icon: Image.asset(homeIcon),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(gamesIcon),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(peopleIcon),
+                label: '',
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -65,7 +72,7 @@ class BottomBar extends StatelessWidget {
   }
 
   String get peopleIcon {
-    final isSelected = currentIndex == 1;
+    final isSelected = currentIndex == 2;
 
     if (isSelected) {
       return isDarkMode

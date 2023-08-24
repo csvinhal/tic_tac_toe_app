@@ -32,5 +32,6 @@
   "homeHomePageScoreboardTitle": "Scoreboard",
   "homeHomePageScoreboardEmpty": "Empty",
   "homeHomePageScoreboardEmptyDescription": "Start playing folks.",
-  "homeFriendsPageTopBar": "Friends"
+  "homeFriendsPageTopBar": "Friends",
+  "homeFriendsPageSearchPlayers": "Search Players"
 }

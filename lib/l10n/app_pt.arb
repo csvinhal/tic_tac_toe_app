@@ -33,5 +33,6 @@
   "homeHomePageScoreboardTitle": "Placar",
   "homeHomePageScoreboardEmpty": "Vazio",
   "homeHomePageScoreboardEmptyDescription": "Comece a jogar pessoal.",
-  "homeFriendsPageTopBar": "Amigos"
+  "homeFriendsPageTopBar": "Amigos",
+  "homeFriendsPageSearchPlayers": "Procurar Jogadores"
 }

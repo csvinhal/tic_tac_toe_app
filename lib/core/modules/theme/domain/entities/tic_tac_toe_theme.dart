@@ -12,6 +12,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     required this.loadingProgressBarThemeData,
     required this.onboardingThemeData,
     required this.scoreThemeData,
+    required this.inputFieldThemeData,
   });
 
   final NeutralColors? neutralColors;
@@ -21,6 +22,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
   final LoadingProgressBarThemeData? loadingProgressBarThemeData;
   final OnboardingThemeData? onboardingThemeData;
   final ScoreThemeData? scoreThemeData;
+  final InputFieldThemeData? inputFieldThemeData;
 
   @override
   ThemeExtension<TicTacToeTheme> copyWith({
@@ -31,6 +33,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     LoadingProgressBarThemeData? loadingProgressBarThemeData,
     OnboardingThemeData? onboardingThemeData,
     ScoreThemeData? scoreThemeData,
+    InputFieldThemeData? inputFieldThemeData,
   }) {
     return TicTacToeTheme(
       neutralColors: neutralColors ?? this.neutralColors,
@@ -42,6 +45,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
           loadingProgressBarThemeData ?? this.loadingProgressBarThemeData,
       onboardingThemeData: onboardingThemeData ?? this.onboardingThemeData,
       scoreThemeData: scoreThemeData ?? this.scoreThemeData,
+      inputFieldThemeData: inputFieldThemeData ?? this.inputFieldThemeData,
     );
   }
 
@@ -80,6 +84,11 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
       scoreThemeData: ScoreThemeData.lerp(
         scoreThemeData,
         other.scoreThemeData,
+        t,
+      ),
+      inputFieldThemeData: InputFieldThemeData.lerp(
+        inputFieldThemeData,
+        other.inputFieldThemeData,
         t,
       ),
     );

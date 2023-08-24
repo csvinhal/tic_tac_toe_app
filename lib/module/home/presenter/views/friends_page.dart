@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/home/presenter/views/widgets/top_bar/top_bar.dart';
 
 class FriendsPage extends StatefulWidget {
@@ -19,6 +20,13 @@ class _FriendsPageState extends State<FriendsPage> {
         child: Column(
           children: [
             TopBar(text: AppLocalizations.of(context).homeFriendsPageTopBar),
+            SizedBox(
+              height: 24.h,
+            ),
+            InputField(
+              label: 'Search Players',
+              type: InputFieldType.search,
+            ),
           ],
         ),
       ),

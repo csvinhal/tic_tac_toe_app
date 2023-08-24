@@ -21,8 +21,8 @@ class HomeViewCubit extends Cubit<HomeViewState> {
   List<Widget> _pages() {
     return [
       HomePage(themeCubit: themeCubit),
+      const OnlinePage(),
       const FriendsPage(),
-      const OnlinePage()
     ];
   }
 }

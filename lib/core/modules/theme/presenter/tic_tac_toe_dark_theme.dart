@@ -43,4 +43,8 @@ TicTacToeTheme darkTicTacToeTheme = const TicTacToeTheme(
     defaultIndicatorColor: AppDarkStaticColor.lightGrey,
   ),
   scoreThemeData: ScoreThemeData(borderColor: AppDarkStaticColor.darkerGrey),
+  inputFieldThemeData: InputFieldThemeData(
+    focusedBorder: AppDarkStaticColor.darkerBlue,
+    enabledBorder: AppDarkStaticColor.darkBlue,
+  ),
 );

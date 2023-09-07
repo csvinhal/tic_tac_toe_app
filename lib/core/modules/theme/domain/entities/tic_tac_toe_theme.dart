@@ -13,6 +13,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     required this.onboardingThemeData,
     required this.scoreThemeData,
     required this.inputFieldThemeData,
+    required this.statusThemeData,
   });
 
   final NeutralColors? neutralColors;
@@ -23,6 +24,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
   final OnboardingThemeData? onboardingThemeData;
   final ScoreThemeData? scoreThemeData;
   final InputFieldThemeData? inputFieldThemeData;
+  final StatusThemeData? statusThemeData;
 
   @override
   ThemeExtension<TicTacToeTheme> copyWith({
@@ -34,6 +36,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     OnboardingThemeData? onboardingThemeData,
     ScoreThemeData? scoreThemeData,
     InputFieldThemeData? inputFieldThemeData,
+    StatusThemeData? statusThemeData,
   }) {
     return TicTacToeTheme(
       neutralColors: neutralColors ?? this.neutralColors,
@@ -46,6 +49,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
       onboardingThemeData: onboardingThemeData ?? this.onboardingThemeData,
       scoreThemeData: scoreThemeData ?? this.scoreThemeData,
       inputFieldThemeData: inputFieldThemeData ?? this.inputFieldThemeData,
+      statusThemeData: statusThemeData ?? this.statusThemeData,
     );
   }
 
@@ -89,6 +93,11 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
       inputFieldThemeData: InputFieldThemeData.lerp(
         inputFieldThemeData,
         other.inputFieldThemeData,
+        t,
+      ),
+      statusThemeData: StatusThemeData.lerp(
+        statusThemeData,
+        other.statusThemeData,
         t,
       ),
     );
@@ -144,6 +153,13 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
         DiagnosticsProperty<ScoreThemeData?>(
           'scoreThemeData',
           scoreThemeData,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<StatusThemeData?>(
+          'statusThemeData',
+          statusThemeData,
           defaultValue: null,
         ),
       );

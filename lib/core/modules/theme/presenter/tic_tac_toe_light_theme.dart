@@ -45,4 +45,9 @@ TicTacToeTheme lightTicTacToeTheme = const TicTacToeTheme(
     focusedBorder: AppLightStaticColor.blue,
     enabledBorder: AppLightStaticColor.lightGrey,
   ),
+  statusThemeData: StatusThemeData(
+    onlineColor: AppLightStaticColor.green,
+    offlineColor: AppLightStaticColor.red,
+    playingColor: AppLightStaticColor.grey,
+  ),
 );

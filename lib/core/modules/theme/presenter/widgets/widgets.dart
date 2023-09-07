@@ -15,3 +15,5 @@ export 'onboarding_theme.dart';
 export 'score.dart';
 export 'score_item.dart';
 export 'score_theme.dart';
+export 'status.dart';
+export 'status_theme.dart';

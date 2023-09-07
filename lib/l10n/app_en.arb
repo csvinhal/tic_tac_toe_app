@@ -1,6 +1,9 @@
 {
   "@@locale": "en",
   "appTitle": "Tic Tac Toe",
+  "themeStatusOnline": "Online",
+  "themeStatusOffline": "Offline",
+  "themeStatusPlaying": "Playing",
   "onboardingOnboardingPagePreviousLabel": "Previous",
   "onboardingOnboardingPageNextLabel": "Next",
   "onboardingOnboardingPageIdeaTitle": "Welcome",

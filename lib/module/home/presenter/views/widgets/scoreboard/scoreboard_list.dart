@@ -43,7 +43,7 @@ class ScoreboardList extends StatelessWidget {
                     score.value.toString(),
                     type: AppTypographyType.body1m,
                     color: ticTacToeTheme?.styleColors?.yellow,
-                  )
+                  ),
                 ],
               ),
             ),

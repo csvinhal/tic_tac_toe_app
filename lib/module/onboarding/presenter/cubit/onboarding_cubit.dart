@@ -34,7 +34,7 @@ class OnboardingCubit extends Cubit<int> {
         title: AppLocalizations.of(context).onboardingOnboardingPageWinnerTitle,
         description: AppLocalizations.of(context)
             .onboardingOnboardingPageWinnerDescription,
-      )
+      ),
     ];
   }
 }

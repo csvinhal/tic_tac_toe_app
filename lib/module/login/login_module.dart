@@ -5,7 +5,7 @@ import 'package:tic_tac_toe_app/module/login/presenter/views/views.dart';
 class LoginModule extends Module {
   @override
   final List<Bind<Object>> binds = [
-    Bind.lazySingleton((i) => PreparingCubit())
+    Bind.lazySingleton((i) => PreparingCubit()),
   ];
 
   @override

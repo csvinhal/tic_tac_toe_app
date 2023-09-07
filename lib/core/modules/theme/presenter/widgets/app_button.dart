@@ -70,7 +70,7 @@ class AppButton extends StatelessWidget {
               AppTypography(
                 label,
                 color: textColor,
-              )
+              ),
             ],
           ),
         ),

@@ -38,7 +38,7 @@ class ConnectionUnavailableContent extends StatelessWidget {
                 excludeIconFromSemantics: true,
                 onPressed: onTap,
               ),
-            )
+            ),
           ],
         );
       },

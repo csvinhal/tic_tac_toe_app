@@ -95,7 +95,7 @@ class _LoadingProgressBarState extends State<LoadingProgressBar>
                       progress: _percent,
                     ),
                     child: Container(),
-                  )
+                  ),
                 ],
               ),
             ),

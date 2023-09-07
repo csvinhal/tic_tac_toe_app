@@ -41,7 +41,7 @@ class ButtonContainer extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pushReplacementNamed('/login/prepare');
                 },
-              )
+              ),
             ],
           ),
         );

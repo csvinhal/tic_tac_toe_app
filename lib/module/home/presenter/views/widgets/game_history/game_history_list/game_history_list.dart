@@ -47,7 +47,7 @@ class GameHistoryList extends StatelessWidget {
             AppTypography(
               game.status.text(context).toUpperCase(),
               color: game.status.color(context, isDarkMode: isDarkMode),
-            )
+            ),
           ],
         );
       },

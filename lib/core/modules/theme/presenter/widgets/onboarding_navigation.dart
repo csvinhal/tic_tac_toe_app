@@ -55,7 +55,7 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
                   child: _OnboardingNavigationIndicator(
                     active: _currentStep == i,
                   ),
-                )
+                ),
             ],
           ),
         ),

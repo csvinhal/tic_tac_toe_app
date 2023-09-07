@@ -45,7 +45,7 @@ class Status extends StatelessWidget {
               type: AppTypographyType.body2,
             ),
           ],
-        )
+        ),
       ],
     );
   }

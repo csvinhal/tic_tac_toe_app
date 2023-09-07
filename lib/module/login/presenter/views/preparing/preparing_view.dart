@@ -35,7 +35,7 @@ class _PreparingViewState extends State<PreparingView> {
             if (state.step == ConnectionStep.done) {
               Future.delayed(
                 const Duration(milliseconds: 150),
-                () => Navigator.of(context).pushReplacementNamed('/home'),
+                () => Navigator.of(context).pushReplacementNamed('/home/root'),
               );
             }
           },

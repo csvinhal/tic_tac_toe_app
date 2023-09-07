@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/home/presenter/cubit/cubit.dart';
 import 'package:tic_tac_toe_app/module/home/presenter/presenter.dart';
@@ -23,7 +24,7 @@ class _HomeViewState extends State<HomeView> {
       bloc: _homeViewCubit,
       builder: (context, state) {
         return Scaffold(
-          body: _homeViewCubit.selectedPage,
+          body: const RouterOutlet(),
           bottomNavigationBar: BlocBuilder<ThemeCubit, ThemeMode>(
             bloc: _themeCubit,
             builder: (_, __) {

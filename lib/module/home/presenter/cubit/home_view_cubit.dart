@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/home/presenter/cubit/home_view_state.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/views/friends_page.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/views/home_page.dart';
-import 'package:tic_tac_toe_app/module/home/presenter/views/online_page.dart';
 
 class HomeViewCubit extends Cubit<HomeViewState> {
   HomeViewCubit({required this.themeCubit})
@@ -12,17 +9,22 @@ class HomeViewCubit extends Cubit<HomeViewState> {
 
   final ThemeCubit themeCubit;
 
-  Widget get selectedPage => _pages()[state.currentIndex];
-
   void updateSelectedPage(int newIndex) {
+    final page = getPageByIndex(newIndex);
+    Modular.to.navigate(page);
     emit(state.copyWith(newIndex));
   }
 
-  List<Widget> _pages() {
-    return [
-      HomePage(themeCubit: themeCubit),
-      const OnlinePage(),
-      const FriendsPage(),
-    ];
+  String getPageByIndex(int index) {
+    switch (index) {
+      case 0:
+        return 'root';
+      case 1:
+        return 'online';
+      case 2:
+        return 'friends';
+      default:
+        return 'root';
+    }
   }
 }

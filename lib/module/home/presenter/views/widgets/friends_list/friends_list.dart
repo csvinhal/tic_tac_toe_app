@@ -47,7 +47,7 @@ class FriendsItem extends StatelessWidget {
           buttonState: statusType == StatusType.online
               ? SmallButtonStateType.active
               : SmallButtonStateType.inactive,
-        )
+        ),
       ],
     );
   }

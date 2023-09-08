@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:tic_tac_toe_app/core/core.dart';
 import 'package:tic_tac_toe_app/module/home/presenter/cubit/cubit.dart';
 import 'package:tic_tac_toe_app/module/home/presenter/presenter.dart';
 import 'package:tic_tac_toe_app/module/home/presenter/views/friends_page.dart';
@@ -7,33 +8,36 @@ import 'package:tic_tac_toe_app/module/home/presenter/views/online_page.dart';
 
 class HomeModule extends Module {
   @override
-  final List<Bind<Object>> binds = [
-    Bind.singleton(
-      (i) => HomeViewCubit(themeCubit: Modular.get()),
-    ),
+  List<Module> get imports => [
+    CoreModule(),
   ];
 
   @override
-  final List<ModularRoute> routes = [
-    ChildRoute<dynamic>(
+  void binds(Injector i) {
+    i.addSingleton<HomeViewCubit>(HomeViewCubit.new);
+  }
+
+  @override
+  void routes(RouteManager r) {
+    r.child(
       '/',
-      child: (_, __) => HomeView(
+      child: (context) => HomeView(
         homeViewCubit: Modular.get(),
       ),
       children: [
         ChildRoute(
           '/root',
-          child: (context, args) => HomePage(themeCubit: Modular.get()),
+          child: (context) => HomePage(themeCubit: Modular.get()),
         ),
         ChildRoute(
           '/online',
-          child: (context, args) => const OnlinePage(),
+          child: (context) => const OnlinePage(),
         ),
         ChildRoute(
           '/friends',
-          child: (context, args) => const FriendsPage(),
+          child: (context) => const FriendsPage(),
         ),
       ],
-    ),
-  ];
+    );
+  }
 }

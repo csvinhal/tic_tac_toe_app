@@ -3,7 +3,7 @@ import 'package:tic_tac_toe_app/core/modules/theme/theme.dart';
 
 class ThemeModule extends Module {
   @override
-  final List<Bind<Object>> binds = [
-    Bind.singleton((i) => ThemeCubit(), export: true),
-  ];
+  void exportedBinds(Injector i) {
+    i.addSingleton<ThemeCubit>(ThemeCubit.new);
+  }
 }

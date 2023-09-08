@@ -4,8 +4,8 @@ import 'package:tic_tac_toe_app/core/modules/theme/theme.dart';
 
 class CoreModule extends Module {
   @override
-  final List<Bind> binds = [
-    ...ThemeModule().binds,
-    ...OnboardModule().binds,
-  ];
+  void exportedBinds(Injector i) {
+    ThemeModule().exportedBinds(i);
+    OnboardModule().exportedBinds(i);
+  }
 }

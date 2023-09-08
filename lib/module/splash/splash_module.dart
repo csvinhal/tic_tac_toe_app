@@ -3,13 +3,13 @@ import 'package:tic_tac_toe_app/module/splash/presenter/views/splash_view.dart';
 
 class SplashModule extends Module {
   @override
-  final List<ModularRoute> routes = [
-    ChildRoute<dynamic>(
+  void routes(RouteManager r) {
+    r.child(
       '/',
-      child: (_, __) => SplashView(
+      child: (context) => SplashView(
         onboardingCubit: Modular.get(),
         themeCubit: Modular.get(),
       ),
-    ),
-  ];
+    );
+  }
 }

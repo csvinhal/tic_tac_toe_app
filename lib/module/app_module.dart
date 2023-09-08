@@ -7,16 +7,16 @@ import 'package:tic_tac_toe_app/module/splash/splash_module.dart';
 
 class AppModule extends Module {
   @override
-  final List<Module> imports = [CoreModule()];
-
-  @override
-  final List<Bind<Object>> binds = [];
-
-  @override
-  final List<ModularRoute> routes = [
-    ModuleRoute<dynamic>('/', module: SplashModule()),
-    ModuleRoute<dynamic>('/home', module: HomeModule()),
-    ModuleRoute<dynamic>('/onboarding', module: OnboardingModule()),
-    ModuleRoute<dynamic>('/login', module: LoginModule()),
+  List<Module> get imports => [
+    CoreModule(),
   ];
+
+  @override
+  void routes(RouteManager r) {
+    r
+      ..module('/', module: SplashModule())
+      ..module('/home', module: HomeModule())
+      ..module('/onboarding', module: OnboardingModule())
+      ..module('/login', module: LoginModule());
+  }
 }

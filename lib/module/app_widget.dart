@@ -18,8 +18,7 @@ class AppWidget extends StatelessWidget {
         return ThemeBuilder(
           builder: (context, theme, darkTheme) {
             return MaterialApp.router(
-              routeInformationParser: Modular.routeInformationParser,
-              routerDelegate: Modular.routerDelegate,
+              routerConfig: Modular.routerConfig,
               debugShowCheckedModeBanner: false,
               onGenerateTitle: (context) {
                 return AppLocalizations.of(context).appTitle;

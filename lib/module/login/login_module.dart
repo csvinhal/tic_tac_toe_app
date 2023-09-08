@@ -4,24 +4,25 @@ import 'package:tic_tac_toe_app/module/login/presenter/views/views.dart';
 
 class LoginModule extends Module {
   @override
-  final List<Bind<Object>> binds = [
-    Bind.lazySingleton((i) => PreparingCubit()),
-  ];
+  void binds(Injector i) {
+    i.addLazySingleton<PreparingCubit>(PreparingCubit.new);
+  }
 
   @override
-  final List<ModularRoute> routes = [
-    ChildRoute<dynamic>(
-      '/',
-      child: (_, __) => SignInView(
-        themeCubit: Modular.get(),
-      ),
-    ),
-    ChildRoute<dynamic>(
-      '/prepare',
-      child: (_, __) => PreparingView(
-        preparingCubit: Modular.get(),
-        themeCubit: Modular.get(),
-      ),
-    ),
-  ];
+  void routes(RouteManager r) {
+    r
+      ..child(
+        '/',
+        child: (context) => SignInView(
+          themeCubit: Modular.get(),
+        ),
+      )
+      ..child(
+        '/prepare',
+        child: (context) => PreparingView(
+          preparingCubit: Modular.get(),
+          themeCubit: Modular.get(),
+        ),
+      );
+  }
 }

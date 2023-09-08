@@ -74,6 +74,8 @@ class AppButtonThemeData extends Equatable with Diagnosticable {
         accentColor,
         normalColor,
         normalBorderColor,
+        normalTextColor,
+        defaultTextColor,
       ];
 
   @override

@@ -14,6 +14,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     required this.scoreThemeData,
     required this.inputFieldThemeData,
     required this.statusThemeData,
+    required this.smallButtonThemeData,
   });
 
   final NeutralColors? neutralColors;
@@ -25,6 +26,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
   final ScoreThemeData? scoreThemeData;
   final InputFieldThemeData? inputFieldThemeData;
   final StatusThemeData? statusThemeData;
+  final SmallButtonThemeData? smallButtonThemeData;
 
   @override
   ThemeExtension<TicTacToeTheme> copyWith({
@@ -37,6 +39,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
     ScoreThemeData? scoreThemeData,
     InputFieldThemeData? inputFieldThemeData,
     StatusThemeData? statusThemeData,
+    SmallButtonThemeData? smallButtonThemeData,
   }) {
     return TicTacToeTheme(
       neutralColors: neutralColors ?? this.neutralColors,
@@ -50,6 +53,7 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
       scoreThemeData: scoreThemeData ?? this.scoreThemeData,
       inputFieldThemeData: inputFieldThemeData ?? this.inputFieldThemeData,
       statusThemeData: statusThemeData ?? this.statusThemeData,
+      smallButtonThemeData: smallButtonThemeData ?? this.smallButtonThemeData,
     );
   }
 
@@ -98,6 +102,11 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
       statusThemeData: StatusThemeData.lerp(
         statusThemeData,
         other.statusThemeData,
+        t,
+      ),
+      smallButtonThemeData: SmallButtonThemeData.lerp(
+        smallButtonThemeData,
+        other.smallButtonThemeData,
         t,
       ),
     );
@@ -160,6 +169,13 @@ class TicTacToeTheme extends ThemeExtension<TicTacToeTheme>
         DiagnosticsProperty<StatusThemeData?>(
           'statusThemeData',
           statusThemeData,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        DiagnosticsProperty<SmallButtonThemeData?>(
+          'smallButtonThemeData',
+          smallButtonThemeData,
           defaultValue: null,
         ),
       );

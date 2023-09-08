@@ -40,5 +40,7 @@
   "homeHomePageScoreboardEmpty": "Empty",
   "homeHomePageScoreboardEmptyDescription": "Start playing folks.",
   "homeFriendsPageTopBar": "Friends",
-  "homeFriendsPageSearchPlayers": "Search Players"
+  "homeFriendsPageSearchPlayers": "Search Players",
+  "homeOnlinePageTopBar": "Online",
+  "homeOnlinePageSearchPlayers": "Search Players"
 }

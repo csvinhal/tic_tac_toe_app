@@ -41,5 +41,7 @@
   "homeHomePageScoreboardEmpty": "Vazio",
   "homeHomePageScoreboardEmptyDescription": "Comece a jogar pessoal.",
   "homeFriendsPageTopBar": "Amigos",
-  "homeFriendsPageSearchPlayers": "Procurar Jogadores"
+  "homeFriendsPageSearchPlayers": "Procurar Jogadores",
+  "homeOnlinePageTopBar": "Online",
+  "homeOnlinePageSearchPlayers": "Procurar Jogadores"
 }
